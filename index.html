@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pine is Fine!</title>
+
+  <link rel="stylesheet" href="./css/aos.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/reset.css">
+
+  <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/aos.js"></script>
 </head>
 
 <body>
   <!-- 사이트 최초 진입시 보이는 애니메이션 -->
   <div class="logo-ani">
-    <video src=""></video>
+    <video src="./img/intro-ani.mp4"></video>
   </div>
 
   <!-- nav가 상단이 아니라 사이드에 있어도 Header로 잡는지? -->
   <!-- header랑 main이랑 같이 flex 시켜도 되는 것이 맞는지? -->
-  <!-- 각각을 div로 잡고 감싸는 wrap도 div로 잡는 것이 맞을까? -->
+  <!-- 아니면 각각을 div로 잡고 감싸는 wrap도 div로 잡는 것이 맞을까용? -->
+  <!-- s : header -->
   <header id="header">
     <div class="inner">
       <nav>
@@ -30,6 +39,9 @@
     </div>
   </header>
   <hr>
+  <!-- // e : header -->
+
+  <!-- s : main -->
   <main id="container">
     <!-- Section 00 : intro | visual -->
     <section id="section0" class="visual">
@@ -67,12 +79,12 @@
           </div>
 
           <div class="introduce-img">
-            <span>소나무 너 참 좋은 친구구나!</span>
-            <span>소나무는 괜찮아!</span>
-
             <figure>
               <img src="./img/introduce-logo.svg" alt="Pine is Fine">
             </figure>
+
+            <span>소나무 너 참 좋은 친구구나!</span>
+            <span>소나무는 괜찮아!</span>
           </div>
         </div>
 
@@ -177,6 +189,7 @@
             </div>
           </div>
         </div>
+
         <!-- Section 01 : about [03]card -->
         <strong># ABOUT with card</strong>
         <ul class="card-list">
@@ -221,18 +234,171 @@
     </section>
 
     <!-- Section 02 : Portfolio -->
-    <div class="inner">
-      <div class="sec-title">
-        <span>01</span>
-        <h2>about</h2>
-      </div>
+    <section id="section2" class="portfolio">
+      <div class="inner">
+        <div class="sec-title">
+          <span>02</span>
+          <h2>portfolio</h2>
+        </div>
+        <!-- Section 02 : Portfolio [01]project -->
+        <div class="portfolio-wrap">
+          <!-- Portfolio의 #Project -->
+          <strong># Project</strong>
+          <div class="project-list-wrap">
+            <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
+            <div class="swiper project-text-slider">
+              <div class="swiper-wrapper">
 
-      <!-- Section 02 : Portfolio [01]project -->
-      <div class="portfolio">
-        <strong># Project</strong>
+                <!-- 슬라이드마다 a태그를 붙여야하나? -->
+                <div class="swiper-slide">
+                  <!-- swiper slide안에 inner가 존재해도 되는가? -->
+                  <div class="inner">
+                    <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
+                    <strong>Samsonite OnlineMall</strong>
+                    <div class="project-info-wrap">
+                      <div class="project-tag-list">
+                        <span class="tag">반응형</span>
+                        <span class="tag">리디자인</span>
+                        <span class="tag">1인 프로젝트</span>
+                      </div>
+                      <dl>
+                        <dt>PROJECT.</dt>
+                        <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                        <dt>PERIOD.</dt>
+                        <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                        <dt>TOOL.</dt>
+                        <dd>
+                          <span><i class="hidden">Figma</i></span>
+                          <span><i class="hidden">Illustrator</i></span>
+                          <span><i class="hidden">Visual Studio Code</i></span>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="inner">
+                    <strong>Melody Mangroove</strong>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="inner">
+                    <strong>COEX Aquarium</strong>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="inner">
+                    <strong>Pine is Fine!</strong>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="inner">
+                    <strong>Toy Story4</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
+            <div class="swiper project-pic-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <button type="button" class="btn-up"><i class="hidden">위</i></button>
+              <button type="button" class="btn-down"><i class="hidden">아래</i></button>
+            </div>
+          </div>
+          <!-- Portfolio의 #Graphic -->
+          <strong># Graphic</strong>
+          <div class="graphic-list-wrap">
+            <div class="swiper graphic-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+              <button type="button" class="btn-next"><i class="hidden">다음</i></button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Section 03 : contact -->
+    <section id="section3" class="contact">
+      <div class="inner">
+        <div class="sec-title">
+          <span>03</span>
+          <h2>contact</h2>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-pic">
+            <!-- 영상으로 할지 이미지로 할지 아직 결정하지 못함 -->
+            <figure>
+              <img src="" alt="">
+            </figure>
+          </div>
+          <div class="contact-text">
+            <dl>
+              <dt>Name</dt>
+              <dd>
+                <p>류솔아</p>
+                <p>RYOO SOL A</p>
+              </dd>
+
+              <dt>E-mail</dt>
+              <dd>mav7937@naver.com</dd>
+
+              <dt>Phone</dt>
+              <dd>010-2700-7937</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- // e : main -->
 </body>
 
 </html>
