@@ -18,7 +18,7 @@
 <body>
   <!-- 사이트 최초 진입시 보이는 애니메이션 -->
   <div class="logo-ani">
-    <video src="./img/intro-ani.mp4"></video>
+    <video src="./img/intro-ani.mp4" controls style="width: 50%; height: 50%"></video>
   </div>
 
   <!-- nav가 상단이 아니라 사이드에 있어도 Header로 잡는지? -->
@@ -28,7 +28,7 @@
   <header id="header">
     <div class="inner">
       <nav>
-        <h1 class="logo"><i class="hidden">Pine is Fine!</i></h1>
+        <h1 class="logo"><a href="#"><i class="hidden">Pine is Fine!</i></a></h1>
         <ul class="gnb">
           <li><a href="#">intro</a></li>
           <li><a href="#">about</a></li>
@@ -51,12 +51,8 @@
         </div>
 
         <div class="visual-con">
-          <div class="sec-title">
-            <span>00</span>
-            <h2><i class="hidden">intro</i></h2>
-          </div>
-          <h3>2024</h3>
-          <h3>Portfolio</h3>
+          <span>00</span>
+          <h2>2024 <strong>Portfolio</strong></h2>
         </div>
       </div>
     </section>
@@ -71,8 +67,9 @@
         <!-- Section 01 : about [01]introduce -->
         <div class="introduce">
           <div class="introduce-text">
-            <h3>안녕하세요!</h3>
-            <h3>소나무 같은 디자이너 <b>류솔아</b> 입니다.</h3>
+            <h3>
+              안녕하세요!<br> 소나무 같은 디자이너 <b>류솔아</b> 입니다.
+            </h3>
 
             <p>소나무처럼 올곧고 바르게 자라라는 이름같이<br>
               항상 위를 보며 성장하는 디자이너가 되고 싶습니다</p>
@@ -81,10 +78,10 @@
           <div class="introduce-img">
             <figure>
               <img src="./img/introduce-logo.svg" alt="Pine is Fine">
+              <p>소나무 너 참 좋은 친구구나!</p>
+              <p>소나무는 괜찮아!</p>
             </figure>
 
-            <span>소나무 너 참 좋은 친구구나!</span>
-            <span>소나무는 괜찮아!</span>
           </div>
         </div>
 
@@ -191,45 +188,47 @@
         </div>
 
         <!-- Section 01 : about [03]card -->
-        <strong># ABOUT with card</strong>
-        <ul class="card-list">
-          <li>
-            <!-- 카드이미지 -->
-            <figure>
-              <img src="" alt="">
-            </figure>
-            <!-- 카드 호버시 나오는 텍스트 -->
-            <div class="card-detail">
-              <strong>Title</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                repellat impedit soluta minima eum, facilis nam quo!</p>
-            </div>
-          </li>
-          <li>
-            <!-- 카드이미지 -->
-            <figure>
-              <img src="" alt="">
-            </figure>
-            <!-- 카드 호버시 나오는 텍스트 -->
-            <div class="card-detail">
-              <strong>Title</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                repellat impedit soluta minima eum, facilis nam quo!</p>
-            </div>
-          </li>
-          <li>
-            <!-- 카드이미지 -->
-            <figure>
-              <img src="" alt="">
-            </figure>
-            <!-- 카드 호버시 나오는 텍스트 -->
-            <div class="card-detail">
-              <strong>Title</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                repellat impedit soluta minima eum, facilis nam quo!</p>
-            </div>
-          </li>
-        </ul>
+        <div class="about-card">
+          <strong># ABOUT with card</strong>
+          <ul class="card-list">
+            <li>
+              <!-- 카드이미지 -->
+              <figure>
+                <img src="" alt="">
+              </figure>
+              <!-- 카드 호버시 나오는 텍스트 -->
+              <div class="card-detail">
+                <strong>Title</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                  repellat impedit soluta minima eum, facilis nam quo!</p>
+              </div>
+            </li>
+            <li>
+              <!-- 카드이미지 -->
+              <figure>
+                <img src="" alt="">
+              </figure>
+              <!-- 카드 호버시 나오는 텍스트 -->
+              <div class="card-detail">
+                <strong>Title</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                  repellat impedit soluta minima eum, facilis nam quo!</p>
+              </div>
+            </li>
+            <li>
+              <!-- 카드이미지 -->
+              <figure>
+                <img src="" alt="">
+              </figure>
+              <!-- 카드 호버시 나오는 텍스트 -->
+              <div class="card-detail">
+                <strong>Title</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                  repellat impedit soluta minima eum, facilis nam quo!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -241,123 +240,130 @@
           <h2>portfolio</h2>
         </div>
         <!-- Section 02 : Portfolio [01]project -->
-        <div class="portfolio-wrap">
+        <div class="portfolio-allwrap">
           <!-- Portfolio의 #Project -->
-          <strong># Project</strong>
-          <div class="project-list-wrap">
-            <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
-            <div class="swiper project-text-slider">
-              <div class="swiper-wrapper">
-
-                <!-- 슬라이드마다 a태그를 붙여야하나? -->
-                <div class="swiper-slide">
-                  <!-- swiper slide안에 inner가 존재해도 되는가? -->
-                  <div class="inner">
-                    <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
-                    <strong>Samsonite OnlineMall</strong>
-                    <div class="project-info-wrap">
-                      <div class="project-tag-list">
-                        <span class="tag">반응형</span>
-                        <span class="tag">리디자인</span>
-                        <span class="tag">1인 프로젝트</span>
+          <div class="project-allwrap">
+            <strong># Project</strong>
+            <div class="project-swiper-wrap">
+              <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
+              <div class="project-text-wrap">
+                <div class="swiper project-text">
+                  <div class="swiper-wrapper">
+                    <!-- 슬라이드마다 a태그를 붙여야하나? -->
+                    <div class="swiper-slide">
+                      <!-- swiper slide안에 inner가 존재해도 되는가? -->
+                      <div class="inner">
+                        <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
+                        <strong>Samsonite OnlineMall</strong>
+                        <div class="project-info-wrap">
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <dl>
+                            <dt>PROJECT.</dt>
+                            <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            <dt>PERIOD.</dt>
+                            <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            <dt>TOOL.</dt>
+                            <dd>
+                              <span><i class="hidden">Figma</i></span>
+                              <span><i class="hidden">Illustrator</i></span>
+                              <span><i class="hidden">Visual Studio Code</i></span>
+                            </dd>
+                          </dl>
+                        </div>
                       </div>
-                      <dl>
-                        <dt>PROJECT.</dt>
-                        <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                        <dt>PERIOD.</dt>
-                        <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                        <dt>TOOL.</dt>
-                        <dd>
-                          <span><i class="hidden">Figma</i></span>
-                          <span><i class="hidden">Illustrator</i></span>
-                          <span><i class="hidden">Visual Studio Code</i></span>
-                        </dd>
-                      </dl>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <strong>Melody Mangroove</strong>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <strong>COEX Aquarium</strong>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <strong>Pine is Fine!</strong>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <strong>Toy Story4</strong>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="inner">
-                    <strong>Melody Mangroove</strong>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="inner">
-                    <strong>COEX Aquarium</strong>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="inner">
-                    <strong>Pine is Fine!</strong>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="inner">
-                    <strong>Toy Story4</strong>
+              </div>
+              <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
+              <div class="project-pic-wrap">
+                <div class="swiper project-pic">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <figure>
+                        <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                      </figure>
+                    </div>
+                    <div class="swiper-slide">
+                      <figure>
+                        <img src="" alt="">
+                      </figure>
+                    </div>
+                    <div class="swiper-slide">
+                      <figure>
+                        <img src="" alt="">
+                      </figure>
+                    </div>
+                    <div class="swiper-slide">
+                      <figure>
+                        <img src="" alt="">
+                      </figure>
+                    </div>
+                    <div class="swiper-slide">
+                      <figure>
+                        <img src="" alt="">
+                      </figure>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
-            <div class="swiper project-pic-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
+              <div class="btn-wrap">
+                <button type="button" class="btn-up"><i class="hidden">위</i></button>
+                <button type="button" class="btn-down"><i class="hidden">아래</i></button>
               </div>
-            </div>
-            <div class="btn-wrap">
-              <button type="button" class="btn-up"><i class="hidden">위</i></button>
-              <button type="button" class="btn-down"><i class="hidden">아래</i></button>
             </div>
           </div>
           <!-- Portfolio의 #Graphic -->
-          <strong># Graphic</strong>
-          <div class="graphic-list-wrap">
-            <div class="swiper graphic-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
+          <div class="graphic-allwrap">
+            <strong># Graphic</strong>
+            <div class="graphic-list-wrap">
+              <div class="swiper graphic-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="btn-wrap">
-              <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
-              <button type="button" class="btn-next"><i class="hidden">다음</i></button>
+              <div class="btn-wrap">
+                <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+                <button type="button" class="btn-next"><i class="hidden">다음</i></button>
+              </div>
             </div>
           </div>
         </div>
