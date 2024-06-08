@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/aos.css">
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <script src="./js/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -17,304 +18,342 @@
 
 <body>
   <!-- 사이트 최초 진입시 보이는 애니메이션 -->
-  <div class="logo-ani">
+  <!-- <div class="logo-ani">
     <video src="./img/intro-ani.mp4" controls style="width: 50%; height: 50%"></video>
-  </div>
+  </div> -->
 
   <!-- nav가 상단이 아니라 사이드에 있어도 Header로 잡는지? -->
   <!-- header랑 main이랑 같이 flex 시켜도 되는 것이 맞는지? -->
   <!-- 아니면 각각을 div로 잡고 감싸는 wrap도 div로 잡는 것이 맞을까용? -->
-  <!-- s : header -->
-  <header id="header">
-    <div class="inner">
-      <nav>
-        <h1 class="logo"><a href="#"><i class="hidden">Pine is Fine!</i></a></h1>
-        <ul class="gnb">
-          <li><a href="#">intro</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">portfolio</a></li>
-          <li><a href="#">contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <hr>
-  <!-- // e : header -->
-
-  <!-- s : main -->
-  <main id="container">
-    <!-- Section 00 : intro | visual -->
-    <section id="section0" class="visual">
+  <div class="wrap">
+    <!-- s : header -->
+    <header id="header">
       <div class="inner">
-        <div class="video">
-          <!-- intro 영상 삽입 -->
-        </div>
-
-        <div class="visual-con">
-          <span>00</span>
-          <h2>2024 <strong>Portfolio</strong></h2>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 01 : about -->
-    <section id="section1" class="about">
-      <div class="inner">
-        <div class="sec-title">
-          <span>01</span>
-          <h2>about</h2>
-        </div>
-        <!-- Section 01 : about [01]introduce -->
-        <div class="introduce">
-          <div class="introduce-text">
-            <h3>
-              안녕하세요!<br> 소나무 같은 디자이너 <b>류솔아</b> 입니다.
-            </h3>
-
-            <p>소나무처럼 올곧고 바르게 자라라는 이름같이<br>
-              항상 위를 보며 성장하는 디자이너가 되고 싶습니다</p>
-          </div>
-
-          <div class="introduce-img">
-            <figure>
-              <img src="./img/introduce-logo.svg" alt="Pine is Fine">
-              <p>소나무 너 참 좋은 친구구나!</p>
-              <p>소나무는 괜찮아!</p>
-            </figure>
-
-          </div>
-        </div>
-
-        <!-- Section 01 : about [02]profile -->
-        <div class="profile">
-          <div class="name">
-            <p>RYOO SOL A</p>
-            <p>류솔아</p>
-            <p>1997. 10. 13</p>
-          </div>
-          <div class="info-detail">
-            <div class="info1">
-              <div class="info1-left">
-                <div class="education">
-                  <strong>education</strong>
-                  <dl>
-                    <dt>2016 - 2023.02</dt>
-                    <dd>이화여자대학교 융합콘텐츠학과 졸업</dd>
-                  </dl>
-                </div>
-                <div class="experience">
-                  <strong>Experience</strong>
-                  <dl>
-                    <dt>2020 - 2022</dt>
-                    <dd>주식회사 비커즈 디자이너 <br>
-                      어플리케이션 서비스 [조이의 숨] 기획 및 디자인</dd>
-                  </dl>
-                </div>
-              </div>
-              <div class="info1-right">
-                <div class="award">
-                  <strong>Award</strong>
-                  <dl>
-                    <dt>2020</dt>
-                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                    <dt>2020</dt>
-                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                    <dt>2020</dt>
-                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div class="info2">
-              <strong>Skill</strong>
-              <ul>
-                <li>
-                  <img src="./img/ico-skill-figma.svg" alt="figma">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-illustrator.svg" alt="illustrator">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-photoshop.svg" alt="photoshop">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-blender.svg" alt="blender">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-html.svg" alt="html">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-css.svg" alt="css">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-js.svg" alt="js">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-aftereffects.svg" alt="aftereffects">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-                <li>
-                  <img src="./img/ico-skill-premiere.svg" alt="premiere">
-                  <div class="levelbar-wrap">
-                    <div class="levelbar"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 01 : about [03]card -->
-        <div class="about-card">
-          <strong># ABOUT with card</strong>
-          <ul class="card-list">
-            <li>
-              <!-- 카드이미지 -->
-              <figure>
-                <img src="" alt="">
-              </figure>
-              <!-- 카드 호버시 나오는 텍스트 -->
-              <div class="card-detail">
-                <strong>Title</strong>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                  repellat impedit soluta minima eum, facilis nam quo!</p>
-              </div>
-            </li>
-            <li>
-              <!-- 카드이미지 -->
-              <figure>
-                <img src="" alt="">
-              </figure>
-              <!-- 카드 호버시 나오는 텍스트 -->
-              <div class="card-detail">
-                <strong>Title</strong>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                  repellat impedit soluta minima eum, facilis nam quo!</p>
-              </div>
-            </li>
-            <li>
-              <!-- 카드이미지 -->
-              <figure>
-                <img src="" alt="">
-              </figure>
-              <!-- 카드 호버시 나오는 텍스트 -->
-              <div class="card-detail">
-                <strong>Title</strong>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
-                  repellat impedit soluta minima eum, facilis nam quo!</p>
-              </div>
-            </li>
+        <nav>
+          <h1 class="logo">
+            <a href="#"><i class="hidden">Pine is Fine!</i></a>
+          </h1>
+          <ul class="gnb">
+            <li class="active"><a href="#section0"><b>intro</b></a></li>
+            <li><a href="#section1"><b>about</b></a></li>
+            <li><a href="#section2"><b>portfolio</b></a></li>
+            <li><a href="#section3"><b>contact</b></a></li>
           </ul>
-        </div>
+        </nav>
       </div>
-    </section>
-
-    <!-- Section 02 : Portfolio -->
-    <section id="section2" class="portfolio">
-      <div class="inner">
-        <div class="sec-title">
-          <span>02</span>
-          <h2>portfolio</h2>
+    </header>
+    <hr>
+    <!-- // e : header -->
+    <!-- s : main -->
+    <main id="container">
+      <!-- Section 00 : intro | visual -->
+      <section id="section0" class="visual">
+        <div class="inner">
+          <div class="visual-video">
+            <!-- intro 영상 삽입 -->
+          </div>
+          <div class="visual-con">
+            <span>00</span>
+            <h2>2024 <strong>Portfolio</strong></h2>
+          </div>
         </div>
-        <!-- Section 02 : Portfolio [01]project -->
-        <div class="portfolio-allwrap">
-          <!-- Portfolio의 #Project -->
-          <div class="project-allwrap">
-            <strong># Project</strong>
-            <div class="project-swiper-wrap">
-              <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
-              <div class="project-text-wrap">
-                <div class="swiper project-text">
-                  <div class="swiper-wrapper">
-                    <!-- 슬라이드마다 a태그를 붙여야하나? -->
-                    <div class="swiper-slide">
-                      <!-- swiper slide안에 inner가 존재해도 되는가? -->
-                      <div class="inner">
-                        <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
-                        <strong>Samsonite OnlineMall</strong>
-                        <div class="project-info-wrap">
-                          <div class="project-tag-list">
-                            <span class="tag">반응형</span>
-                            <span class="tag">리디자인</span>
-                            <span class="tag">1인 프로젝트</span>
+      </section>
+      <!-- Section 01 : about -->
+      <section id="section1" class="about">
+        <div class="inner">
+          <div class="sec-title">
+            <span>01</span>
+            <h2>about</h2>
+          </div>
+          <!-- Section 01 : about [01]introduce -->
+          <div class="introduce-wrap">
+            <div class="introduce">
+              <div class="introduce-text">
+                <h3>
+                  안녕하세요!<br> 소나무 같은 디자이너 <b>류솔아</b> 입니다.
+                </h3>
+                <p>소나무처럼 올곧고 바르게 자라라는 이름같이<br>
+                  항상 위를 보며 성장하는 디자이너가 되고 싶습니다</p>
+              </div>
+              <div class="introduce-img">
+                <figure>
+                  <img src="./img/introduce-logo.svg" alt="Pine is Fine">
+                  <p>소나무 너 참 좋은 친구구나!</p>
+                  <p>소나무는 괜찮아!</p>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <!-- Section 01 : about [02]profile -->
+          <div class="profile">
+            <div class="name">
+              <p>RYOO SOL A</p>
+              <p>류솔아</p>
+              <p>1997. 10. 13</p>
+            </div>
+            <div class="info-detail">
+              <div class="info1">
+                <div class="info1-left">
+                  <div class="education">
+                    <strong>Education</strong>
+                    <dl>
+                      <dt>2016 - 2023</dt>
+                      <dd>Lorem ipsum dolor sit amet consectetur.</dd>
+                    </dl>
+                  </div>
+                  <div class="experience">
+                    <strong>Experience</strong>
+                    <dl>
+                      <dt>2020 - 2022</dt>
+                      <dd>Lorem ipsum dolor sit amet. <br>
+                        Lorem ipsum dolor sit amet consectetur.</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="info1-right">
+                  <div class="award">
+                    <strong>Award</strong>
+                    <dl>
+                      <dt>2020</dt>
+                      <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                    </dl>
+                    <dl>
+                      <dt>2020</dt>
+                      <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                    </dl>
+                    <dl>
+                      <dt>2020</dt>
+                      <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="info2">
+                <strong>Skill</strong>
+                <ul>
+                  <li>
+                    <figure><img src="./img/ico-skill-figma.svg" alt="figma"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-illustrator.svg" alt="illustrator"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-photoshop.svg" alt="photoshop"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-blender.svg" alt="blender"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-html.svg" alt="html"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-css.svg" alt="css"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-js.svg" alt="js"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-aftereffects.svg" alt="aftereffects"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <figure><img src="./img/ico-skill-premiere.svg" alt="premiere"></figure>
+                    <div class="levelbar-wrap">
+                      <div class="levelbar"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Section 01 : about [03]card -->
+          <div class="about-card">
+            <strong class="title-tag"># ABOUT with card</strong>
+            <ul class="card-list">
+              <li>
+                <!-- 카드이미지 -->
+                <figure>
+                  <img src="" alt="">
+                </figure>
+                <!-- 카드 호버시 나오는 텍스트 -->
+                <div class="card-detail">
+                  <div class="inner">
+                    <strong>Title</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                      repellat impedit soluta minima eum, facilis nam quo!</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <!-- 카드이미지 -->
+                <figure>
+                  <img src="" alt="">
+                </figure>
+                <!-- 카드 호버시 나오는 텍스트 -->
+                <div class="card-detail">
+                  <div class="inner">
+                    <strong>Title</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                      repellat impedit soluta minima eum, facilis nam quo!</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <!-- 카드이미지 -->
+                <figure>
+                  <img src="" alt="">
+                </figure>
+                <!-- 카드 호버시 나오는 텍스트 -->
+                <div class="card-detail">
+                  <div class="inner">
+                    <strong>Title</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis exercitationem
+                      repellat impedit soluta minima eum, facilis nam quo!</p>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Section 02 : Portfolio -->
+      <section id="section2" class="portfolio">
+        <div class="inner">
+          <div class="sec-title">
+            <span>02</span>
+            <h2>portfolio</h2>
+          </div>
+          <!-- Section 02 : Portfolio [01]project -->
+          <div class="portfolio-allwrap">
+            <!-- Portfolio의 #Project -->
+            <div class="project-allwrap">
+              <strong class="title-tag"># Project</strong>
+              <div class="project-swiper-wrap">
+                <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
+                <div class="project-text-wrap">
+                  <div class="swiper project-text">
+                    <div class="swiper-wrapper">
+                      <!-- 슬라이드마다 a태그를 붙여야하나? -->
+                      <div class="swiper-slide">
+                        <!-- swiper slide안에 inner가 존재해도 되는가? -->
+                        <div class="inner">
+                          <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
+                          <strong>Samsonite OnlineMall</strong>
+                          <div class="project-info-wrap">
+                            <strong>Samsonite OnlineMall</strong>
+                            <div class="project-tag-list">
+                              <span class="tag">반응형</span>
+                              <span class="tag">리디자인</span>
+                              <span class="tag">1인 프로젝트</span>
+                            </div>
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
                           </div>
-                          <dl>
-                            <dt>PROJECT.</dt>
-                            <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                            <dt>PERIOD.</dt>
-                            <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                            <dt>TOOL.</dt>
-                            <dd>
-                              <span><i class="hidden">Figma</i></span>
-                              <span><i class="hidden">Illustrator</i></span>
-                              <span><i class="hidden">Visual Studio Code</i></span>
-                            </dd>
-                          </dl>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="inner">
+                          <strong>Melody Mangroove</strong>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="inner">
+                          <strong>COEX Aquarium</strong>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="inner">
+                          <strong>Pine is Fine!</strong>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="inner">
+                          <strong>Toy Story4</strong>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="inner">
-                        <strong>Melody Mangroove</strong>
+                  </div>
+                </div>
+                <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
+                <div class="project-pic-wrap">
+                  <div class="swiper project-pic">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                        </figure>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="inner">
-                        <strong>COEX Aquarium</strong>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="" alt="">
+                        </figure>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="inner">
-                        <strong>Pine is Fine!</strong>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="" alt="">
+                        </figure>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="inner">
-                        <strong>Toy Story4</strong>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="" alt="">
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="" alt="">
+                        </figure>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-up"><i class="hidden">위</i></button>
+                  <button type="button" class="btn-down"><i class="hidden">아래</i></button>
+                </div>
               </div>
-              <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
-              <div class="project-pic-wrap">
-                <div class="swiper project-pic">
+            </div>
+            <!-- Portfolio의 #Graphic -->
+            <div class="graphic-allwrap">
+              <strong class="title-tag"># Graphic</strong>
+              <div class="graphic-list-wrap">
+                <div class="swiper graphic-slider">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <figure>
-                        <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img src="" alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
                         <img src="" alt="">
                       </figure>
                     </div>
@@ -330,79 +369,47 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="btn-wrap">
-                <button type="button" class="btn-up"><i class="hidden">위</i></button>
-                <button type="button" class="btn-down"><i class="hidden">아래</i></button>
-              </div>
-            </div>
-          </div>
-          <!-- Portfolio의 #Graphic -->
-          <div class="graphic-allwrap">
-            <strong># Graphic</strong>
-            <div class="graphic-list-wrap">
-              <div class="swiper graphic-slider">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <figure>
-                      <img src="" alt="">
-                    </figure>
-                  </div>
-                  <div class="swiper-slide">
-                    <figure>
-                      <img src="" alt="">
-                    </figure>
-                  </div>
-                  <div class="swiper-slide">
-                    <figure>
-                      <img src="" alt="">
-                    </figure>
-                  </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+                  <button type="button" class="btn-next"><i class="hidden">다음</i></button>
                 </div>
               </div>
-              <div class="btn-wrap">
-                <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
-                <button type="button" class="btn-next"><i class="hidden">다음</i></button>
-              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Section 03 : contact -->
-    <section id="section3" class="contact">
-      <div class="inner">
-        <div class="sec-title">
-          <span>03</span>
-          <h2>contact</h2>
-        </div>
-        <div class="contact-wrap">
-          <div class="contact-pic">
-            <!-- 영상으로 할지 이미지로 할지 아직 결정하지 못함 -->
-            <figure>
-              <img src="" alt="">
-            </figure>
+      </section>
+      <!-- Section 03 : contact -->
+      <section id="section3" class="contact">
+        <div class="inner">
+          <div class="sec-title">
+            <span>03</span>
+            <h2>contact</h2>
           </div>
-          <div class="contact-text">
-            <dl>
-              <dt>Name</dt>
-              <dd>
-                <p>류솔아</p>
-                <p>RYOO SOL A</p>
-              </dd>
-
-              <dt>E-mail</dt>
-              <dd>mav7937@naver.com</dd>
-
-              <dt>Phone</dt>
-              <dd>010-2700-7937</dd>
-            </dl>
+          <div class="contact-wrap">
+            <div class="contact-pic">
+              <!-- 영상으로 할지 이미지로 할지 아직 결정하지 못함 -->
+              <figure>
+                <img src="" alt="">
+              </figure>
+            </div>
+            <div class="contact-text">
+              <dl>
+                <dt>Name</dt>
+                <dd>
+                  <p>류솔아</p>
+                  <p>RYOO SOL A</p>
+                </dd>
+                <dt>E-mail</dt>
+                <dd>mav7937@naver.com</dd>
+                <dt>Phone</dt>
+                <dd>010-2700-7937</dd>
+              </dl>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
 
   <!-- // e : main -->
 </body>

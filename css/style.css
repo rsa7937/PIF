@@ -1,0 +1,598 @@
+@charset 'utf-8';
+
+/* 영문 폰트 : Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 한문 폰트 : Pretendard */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* Common */
+:root {
+  font-size: 62.5%;
+
+  /* color */
+  --black: #2c2c2c;
+  --black2: #555;
+  --white: #fff;
+  --white1: #fafafa;
+
+  --gray: #f5f5f5;
+
+  --cream: #f8edd9;
+
+  --green: #317039;
+  --dark-green: #143021;
+
+  --red: #dd5c35;
+  --yellow: #f1be49;
+
+  --line: rgba(170, 170, 170, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--cream);
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+body {
+  font: 1.6rem/1.6 'Poppins', 'Pretendard', sans-serif;
+  color: var(--black);
+  word-break: keep-all;
+  letter-spacing: -0.05rem;
+}
+
+.wrap {
+  display: flex;
+  position: relative;
+}
+
+/* header */
+#header {
+  width: 38.4rem;
+  width: 20%;
+  background: var(--white);
+  border: 1px solid #000;
+
+  height: 100vh;
+
+  /* position: fixed; */
+  z-index: 10;
+}
+
+#header .inner {
+  width: 30rem;
+  padding: 6rem 0;
+  margin: 0 auto;
+  background: rgba(255, 255, 0, 0.2);
+  height: 100%;
+}
+
+.logo a {
+  display: block;
+  width: 14rem;
+  height: 5rem;
+  background: url(../img/logo.svg) no-repeat 50%;
+
+  border: 1px solid #000;
+}
+
+.gnb {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+
+  margin-top: 23rem;
+
+  counter-reset: index-count;
+}
+.gnb li a {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  border-radius: 1rem;
+
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--gray);
+
+  counter-increment: index-count;
+}
+
+.gnb li a b {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.8rem;
+  align-items: center;
+  font-weight: 700;
+}
+.gnb li a b::before {
+  content: '0' counter(index-count);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gnb li.active a {
+  height: 14rem;
+  align-items: flex-start;
+  padding-top: 2rem;
+
+  background: var(--green);
+  color: var(--white);
+}
+
+#container {
+  width: 80%;
+  background: var(--white1);
+}
+
+section > .inner {
+  width: 141.6rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 0, 0.2);
+}
+
+/* Section 00 : intro | visual */
+.visual {
+  padding: 7rem 0;
+}
+
+.visual > .inner {
+  position: relative;
+}
+.visual-video {
+  width: 100%;
+  height: 74.2rem;
+  background: var(--dark-green);
+  border-radius: 2rem;
+
+  position: relative;
+}
+.visual-con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--cream);
+  width: 100%;
+  width: 121.6rem;
+  width: 85.8757%;
+  height: 100%;
+  height: 60.2rem;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.visual-con span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.visual-con h2 {
+  font-size: 8.4rem;
+  font-weight: 600;
+  letter-spacing: -0.2rem;
+  line-height: 0.95;
+  border: 1px solid #000;
+  position: relative;
+}
+.visual-con h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background: url(../img/ico-arrow-white-big.svg) no-repeat 50%;
+}
+
+.visual-con h2 strong {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.visual-con h2 strong::after {
+  content: '';
+  display: block;
+  background: #000 url(../img/ico-pine-twice.svg);
+  width: 5.7rem;
+  height: 4.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Section 01 : about */
+.about {
+  padding: 12rem 0;
+}
+
+/* Section Title 양식 통일 */
+.sec-title span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.sec-title h2 {
+  font-size: 3.8rem;
+  font-weight: 700;
+
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  margin-top: -1.2rem;
+}
+.sec-title h2::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--green) url(../img/ico-arrow-white.svg) no-repeat 50%;
+  transform: rotate(45deg);
+}
+
+/*  Section 01 : about [01]introduce */
+.introduce-wrap {
+  padding-bottom: 6rem;
+}
+.introduce {
+  margin-top: 3rem;
+
+  width: 100%;
+  height: 51rem;
+  border-radius: 2rem;
+
+  border: 1px solid var(--line);
+  background: var(--white);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 7rem 10rem;
+}
+
+.introduce-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+
+  border: 1px solid #000;
+}
+.introduce-text h3 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  /* 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; */
+}
+
+.introduce-text h3::before {
+  content: '';
+  display: block;
+  width: 7.5rem;
+  height: 6.3rem;
+  background: #000 url(../img/introduce-pine.svg);
+  margin-bottom: 2rem;
+}
+.introduce-text h3 b {
+  margin-left: 1rem;
+  color: var(--green);
+}
+.introduce-text p {
+  font-size: 1.8rem;
+}
+.introduce-img {
+  /* border: 1px solid #000; */
+}
+.introduce-img figure {
+  position: relative;
+  width: 42rem;
+  height: 24rem;
+}
+.introduce-img figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.introduce-img p {
+  position: absolute;
+  color: var(--cream);
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: var(--red);
+  padding: 0.8rem 1.6rem;
+  border-radius: 5rem;
+}
+.introduce-img p:first-of-type {
+  top: -6rem;
+  right: 2.6rem;
+}
+.introduce-img p::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+}
+.introduce-img p:first-of-type::after {
+  bottom: -1.5rem;
+  left: 3rem;
+  border-top-color: var(--red);
+}
+.introduce-img p + p {
+  bottom: -6rem;
+  left: -4rem;
+}
+
+.introduce-img p + p::after {
+  top: -1.5rem;
+  right: 3rem;
+  border-bottom-color: var(--red);
+}
+
+/* Section 01 : about [02]profile */
+.profile {
+  padding: 10rem 10rem 12rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  border: 1px solid #000;
+}
+.name p:nth-of-type(1) {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--black2);
+  letter-spacing: 0.3rem;
+
+  margin-top: 0.4rem;
+}
+.name p:nth-of-type(2) {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.6rem;
+}
+.name p:nth-of-type(3) {
+  font-family: 'pretendard';
+  color: var(--black2);
+  font-size: 1.8rem;
+
+  margin-top: 1.6rem;
+}
+.info-detail {
+  width: 88.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.education strong,
+.experience strong,
+.award strong,
+.info2 strong {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.education dl,
+.experience dl,
+.award dl,
+.info2 dl {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--black2);
+  font-family: 'pretendard';
+}
+.info1 {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+  background: #ff0;
+}
+.info1-left {
+  display: flex;
+  flex-direction: column;
+  height: 24rem;
+  justify-content: space-between;
+  border: 1px solid #000;
+
+  width: 43rem;
+}
+.education,
+.experience,
+.award,
+.info2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.education dl,
+.experience dl,
+.award dl {
+  display: flex;
+  gap: 2rem;
+
+  border: 1px solid #000;
+}
+.info1-right {
+  width: 40rem;
+}
+.info2 ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+
+  border: 1px solid #000;
+}
+
+.info2 ul li {
+  display: flex;
+  align-items: center;
+  width: 40rem;
+
+  gap: 1.6rem;
+  border: 1px solid #000;
+}
+.info2 ul li .levelbar-wrap {
+  width: 28rem;
+  height: 0.5rem;
+  background: var(--line);
+  border-radius: 1rem;
+
+  position: relative;
+}
+
+.info2 ul li .levelbar-wrap .levelbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 0.5rem;
+  border-radius: 5rem;
+  background: var(--red);
+}
+.info2 ul li figure {
+  width: 4rem;
+  height: 4rem;
+  background: #000;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info2 ul li figure img {
+  border: 1px solid #fff;
+}
+
+/* Section 01 : about [03]card */
+.about-card {
+  padding: 2rem 10rem 7rem;
+}
+
+.title-tag {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  background: var(--green);
+  color: var(--cream);
+}
+
+.card-list {
+  margin-top: 2.8rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.card-list li {
+  height: 45rem;
+  /* border: 1px solid #000; */
+  background: #d9d9d9;
+  border-radius: 1rem;
+  /* overflow: hidden; */
+
+  position: relative;
+  flex: 1 1 30%;
+  overflow: hidden;
+}
+
+.card-list li:hover .card-detail {
+  bottom: 0;
+}
+.card-detail {
+  width: 100%;
+  height: 30rem;
+  background: var(--gray);
+
+  padding: 3rem 0;
+  border-radius: 1rem;
+
+  position: absolute;
+  bottom: -30rem;
+  left: 0;
+
+  transition: 0.4s;
+}
+.card-detail > .inner {
+  width: 32.5rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 0, 0.2);
+  height: 100%;
+
+  position: relative;
+}
+.card-detail > .inner::after {
+  content: '';
+
+  display: block;
+  background: url(../img/ico-pine-2-3.svg) no-repeat 50%;
+  width: 4.8rem;
+  height: 5rem;
+  border: 1px solid #000;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.card-detail strong {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-detail strong::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--red) url(../img/ico-arrow-white.svg) no-repeat 50%;
+  transform: rotate(180deg);
+}
+.card-detail p {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: var(--black2);
+}
+
+/* Section 02 : Portfolio */
+.portfolio {
+  padding: 10rem 0;
+}
+.portfolio-allwrap {
+  margin-top: 3.6rem;
+}
