@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <script src="./js/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <script src="./js/swiper-bundle.min.js"></script>
   <script src="./js/aos.js"></script>
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -248,33 +250,38 @@
             <h2>portfolio</h2>
           </div>
           <!-- Section 02 : Portfolio [01]project -->
-          <div class="portfolio-allwrap">
-            <!-- Portfolio의 #Project -->
-            <div class="project-allwrap">
-              <strong class="title-tag"># Project</strong>
-              <div class="project-swiper-wrap">
-                <!-- 좌측 슬라이더 : 프로젝트 소개 텍스트 설명-->
-                <div class="project-text-wrap">
-                  <div class="swiper project-text">
-                    <div class="swiper-wrapper">
-                      <!-- 슬라이드마다 a태그를 붙여야하나? -->
-                      <div class="swiper-slide">
-                        <!-- swiper slide안에 inner가 존재해도 되는가? -->
-                        <div class="inner">
-                          <!-- 프로젝트마다 넘버링이 붙는데, 넘버혼자 inner를 벗어남 -> strong의 가상요소 만들어서 absolute로 띄워도 되는지? -->
+          <div class="project-allwrap">
+            <strong class="title-tag"># Project</strong>
+            <div class="project-swiper-wrap">
+              <div class="project-text-wrap">
+                <div class="swiper project-text">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>01</span>
                           <strong>Samsonite OnlineMall</strong>
-                          <div class="project-info-wrap">
+                        </div>
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>01</span>
                             <strong>Samsonite OnlineMall</strong>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
                             <dl>
                               <dt>PROJECT.</dt>
                               <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
                               <dt>PERIOD.</dt>
                               <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
                               <dt>TOOL.</dt>
                               <dd>
                                 <span><i class="hidden">Figma</i></span>
@@ -285,94 +292,241 @@
                           </div>
                         </div>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>02</span>
                           <strong>Melody Mangroove</strong>
                         </div>
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>02</span>
+                            <strong>Melody Mangroove</strong>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
+                          </div>
+                        </div>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>03</span>
                           <strong>COEX Aquarium</strong>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <strong>Pine is Fine!</strong>
+
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>03</span>
+                            <strong>COEX Aquarium</strong>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
+                          </div>
                         </div>
                       </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <strong>Toy Story4</strong>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>04</span>
+                          <strong>Portfolio Site</strong>
+                        </div>
+
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>04</span>
+                            <strong>Portfolio Site</strong>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>05</span>
+                          <strong>Toy Story4 MicroSite</strong>
+                        </div>
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>05</span>
+                            <strong>Toy Story4 MicroSite</strong>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="inner">
+                        <div class="project-title">
+                          <span>06</span>
+                          <strong>Joe's Breath</strong>
+                        </div>
+                        <div class="project-info-wrap">
+                          <div class="project-title">
+                            <span>06</span>
+                            <strong>Joe's Breath</strong>
+                          </div>
+                          <div class="project-tag-list">
+                            <span class="tag">반응형</span>
+                            <span class="tag">리디자인</span>
+                            <span class="tag">1인 프로젝트</span>
+                          </div>
+                          <div class="project-info-detail">
+                            <dl>
+                              <dt>PROJECT.</dt>
+                              <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                            </dl>
+                            <dl>
+                              <dt>PERIOD.</dt>
+                              <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                            </dl>
+                            <dl>
+                              <dt>TOOL.</dt>
+                              <dd>
+                                <span><i class="hidden">Figma</i></span>
+                                <span><i class="hidden">Illustrator</i></span>
+                                <span><i class="hidden">Visual Studio Code</i></span>
+                              </dd>
+                            </dl>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- 우측 슬라이더 : 프로젝트 소개 이미지-->
-                <div class="project-pic-wrap">
-                  <div class="swiper project-pic">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
-                        </figure>
-                      </div>
-                      <div class="swiper-slide">
-                        <figure>
-                          <img src="" alt="">
-                        </figure>
-                      </div>
-                      <div class="swiper-slide">
-                        <figure>
-                          <img src="" alt="">
-                        </figure>
-                      </div>
-                      <div class="swiper-slide">
-                        <figure>
-                          <img src="" alt="">
-                        </figure>
-                      </div>
-                      <div class="swiper-slide">
-                        <figure>
-                          <img src="" alt="">
-                        </figure>
-                      </div>
-                    </div>
+              </div>
+              <div class="project-img-wrap">
+                <div class="swiper project-img">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
                   </div>
-                </div>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-up"><i class="hidden">위</i></button>
-                  <button type="button" class="btn-down"><i class="hidden">아래</i></button>
                 </div>
               </div>
             </div>
-            <!-- Portfolio의 #Graphic -->
-            <div class="graphic-allwrap">
-              <strong class="title-tag"># Graphic</strong>
-              <div class="graphic-list-wrap">
-                <div class="swiper graphic-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <figure>
-                        <img src="" alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img src="" alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img src="" alt="">
-                      </figure>
-                    </div>
+            <!-- If we need navigation buttons -->
+            <div class="btn-wrap">
+              <button type="button" class="btn-up"><i class="hidden">위</i></button>
+              <button type="button" class="btn-down"><i class="hidden">아래</i></button>
+            </div>
+          </div>
+          <!-- Section 02 : Portfolio [02]Graphic -->
+          <div class="graphic-allwrap">
+            <strong class="title-tag"># Graphic</strong>
+            <div class="graphic-list-wrap">
+              <div class="swiper graphic-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
                   </div>
                 </div>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
-                  <button type="button" class="btn-next"><i class="hidden">다음</i></button>
-                </div>
+              </div>
+              <div class="btn-wrap">
+                <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+                <button type="button" class="btn-next"><i class="hidden">다음</i></button>
               </div>
             </div>
           </div>

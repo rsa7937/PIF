@@ -593,6 +593,147 @@ section > .inner {
 .portfolio {
   padding: 10rem 0;
 }
-.portfolio-allwrap {
-  margin-top: 3.6rem;
+
+/* 프로젝트 텍스트 스와이퍼 */
+.project-allwrap {
+  margin-top: 4rem;
+}
+.project-swiper-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 90rem;
+  margin-top: 3rem;
+}
+
+.project-text .inner {
+  width: 44.2rem;
+  margin: 0 auto;
+}
+.project-text {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.project-text .swiper-wrapper {
+  width: 100%;
+}
+
+.project-text .swiper-slide {
+  height: 12rem;
+  border: 1px solid #000;
+  background: rgba(255, 0, 0, 0.2);
+  padding: 3rem 0;
+
+  width: 64.2rem !important;
+  border-radius: 1.6rem;
+  color: rgba(17, 17, 17, 0.5);
+  border: 2px solid var(--line);
+  background: #eee;
+
+  transition: 0.4s;
+}
+
+/* 프로젝트 텍스트 타이틀 */
+
+.project-text .swiper-slide .project-title {
+  position: relative;
+}
+.project-text .swiper-slide .project-title strong {
+  display: block;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.project-text .swiper-slide .project-title span {
+  position: absolute;
+  border: 1px solid #000;
+  display: flex;
+
+  justify-content: center;
+  width: 4rem;
+  height: 5rem;
+  font-weight: 700;
+  font-size: 3.2rem;
+
+  top: 0%;
+  left: -5.5rem;
+}
+
+.project-text .swiper-slide .project-info-wrap .project-title span,
+.project-info-wrap strong {
+  color: var(--black);
+}
+.project-text .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.project-text .swiper-slide.swiper-slide-active .inner > .project-title {
+  display: none;
+}
+
+/* 활성화되기전 슬라이드 세부 정보 보이지 않기*/
+.project-text .swiper-slide .project-info-wrap {
+  display: none;
+}
+/* 활성화되면 슬라이드 세부 정보 보이기*/
+.project-text .swiper-slide.swiper-slide-active .project-info-wrap {
+  display: block;
+}
+
+.project-info-wrap .project-tag-list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.project-info-wrap .tag {
+  color: var(--cream);
+  font-size: 1.4rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--red);
+  border-radius: 5rem;
+  font-weight: 500;
+}
+
+.project-info-wrap .project-info-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5.4rem;
+}
+.project-info-wrap .project-info-detail dl {
+  display: flex;
+  gap: 2rem;
+  color: var(--black2);
+}
+.project-info-wrap .project-info-detail dt {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.project-info-wrap .project-info-detail dd {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.project-text .swiper-slide.swiper-slide-active {
+  border: 2px solid var(--green);
+  background: var(--white);
+  height: 39rem !important;
+}
+
+/* 프로젝트 이미지 스와이퍼 */
+.project-img-wrap {
+  /* width: 70%; */
+  width: 75.4rem;
+  background: rgba(0, 255, 0, 0.2);
+  height: 100%;
+}
+
+.project-img {
+  height: 100%;
+}
+
+.project-img .swiper-slide {
+  width: 100%;
+  border: 1px solid #f00;
+  height: 100%;
 }
