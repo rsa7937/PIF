@@ -730,10 +730,33 @@ section > .inner {
 
 .project-img {
   height: 100%;
+  overflow: hidden;
+
+  border-radius: 2rem;
 }
 
 .project-img .swiper-slide {
   width: 100%;
   border: 1px solid #f00;
   height: 100%;
+  object-fit: cover;
+}
+.btn-wrap {
+  display: flex;
+  gap: 1.6rem;
+}
+.btn-wrap button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  background: var(--white1) url(../img/ico-arrow-green.svg) no-repeat 50%;
+}
+
+.project-tag-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-down {
+  transform: rotate(180deg);
 }
