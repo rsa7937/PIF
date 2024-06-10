@@ -58,6 +58,13 @@ hr,
   clip: rect(0, 0, 0, 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font: 1.6rem/1.6 'Poppins', 'Pretendard', sans-serif;
   color: var(--black);
@@ -75,11 +82,11 @@ body {
   width: 38.4rem;
   width: 20%;
   background: var(--white);
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 
   height: 100vh;
 
-  /* position: fixed; */
+  position: fixed;
   z-index: 10;
 }
 
@@ -87,7 +94,7 @@ body {
   width: 30rem;
   padding: 6rem 0;
   margin: 0 auto;
-  background: rgba(255, 255, 0, 0.2);
+  /* background: rgba(255, 255, 0, 0.2); */
   height: 100%;
 }
 
@@ -97,7 +104,7 @@ body {
   height: 5rem;
   background: url(../img/logo.svg) no-repeat 50%;
 
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 
 .gnb {
@@ -120,6 +127,8 @@ body {
   background: var(--gray);
 
   counter-increment: index-count;
+  transition: 0.4s;
+  border: 2px solid var(--gray);
 }
 
 .gnb li a b {
@@ -134,11 +143,14 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+.gnb li.hover a {
+  border: 2px solid var(--green);
+}
 .gnb li.active a {
   height: 14rem;
   align-items: flex-start;
   padding-top: 2rem;
+  border: 2px solid var(--green);
 
   background: var(--green);
   color: var(--white);
@@ -147,12 +159,13 @@ body {
 #container {
   width: 80%;
   background: var(--white1);
+  padding: 0 0 0 20%;
 }
 
 section > .inner {
   width: 141.6rem;
   margin: 0 auto;
-  background: rgba(255, 255, 0, 0.2);
+  /* background: rgba(255, 255, 0, 0.2); */
 }
 
 /* Section 00 : intro | visual */
@@ -183,7 +196,7 @@ section > .inner {
   height: 100%;
   height: 60.2rem;
 
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
 
   display: flex;
   flex-direction: column;
@@ -198,7 +211,7 @@ section > .inner {
   font-weight: 600;
   letter-spacing: -0.2rem;
   line-height: 0.95;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   position: relative;
 }
 .visual-con h2::after {
@@ -221,7 +234,7 @@ section > .inner {
 .visual-con h2 strong::after {
   content: '';
   display: block;
-  background: #000 url(../img/ico-pine-twice.svg);
+  background: url(../img/ico-pine-twice.svg);
   width: 5.7rem;
   height: 4.8rem;
   margin-bottom: 1rem;
@@ -283,7 +296,7 @@ section > .inner {
   flex-direction: column;
   gap: 3.5rem;
 
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 .introduce-text h3 {
   font-size: 3.6rem;
@@ -300,7 +313,7 @@ section > .inner {
   display: block;
   width: 7.5rem;
   height: 6.3rem;
-  background: #000 url(../img/introduce-pine.svg);
+  background: url(../img/introduce-pine.svg) no-repeat 50%;
   margin-bottom: 2rem;
 }
 .introduce-text h3 b {
@@ -366,7 +379,7 @@ section > .inner {
 }
 
 .name {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 .name p:nth-of-type(1) {
   font-size: 2rem;
@@ -415,14 +428,14 @@ section > .inner {
   display: flex;
   justify-content: space-between;
   /* border: 1px solid #000; */
-  background: #ff0;
+  /* background: #ff0; */
 }
 .info1-left {
   display: flex;
   flex-direction: column;
   height: 24rem;
   justify-content: space-between;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 
   width: 43rem;
 }
@@ -440,7 +453,7 @@ section > .inner {
   display: flex;
   gap: 2rem;
 
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 .info1-right {
   width: 40rem;
@@ -452,7 +465,7 @@ section > .inner {
   flex-wrap: wrap;
   gap: 1.6rem;
 
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 
 .info2 ul li {
@@ -461,7 +474,7 @@ section > .inner {
   width: 40rem;
 
   gap: 1.6rem;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 .info2 ul li .levelbar-wrap {
   width: 28rem;
@@ -484,14 +497,14 @@ section > .inner {
 .info2 ul li figure {
   width: 4rem;
   height: 4rem;
-  background: #000;
+  background: var(--black);
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .info2 ul li figure img {
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
 }
 
 /* Section 01 : about [03]card */
@@ -518,7 +531,7 @@ section > .inner {
   height: 45rem;
   /* border: 1px solid #000; */
   background: #d9d9d9;
-  border-radius: 1rem;
+  border-radius: 1.6rem;
   /* overflow: hidden; */
 
   position: relative;
@@ -535,7 +548,7 @@ section > .inner {
   background: var(--gray);
 
   padding: 3rem 0;
-  border-radius: 1rem;
+  border-radius: 1.2rem;
 
   position: absolute;
   bottom: -30rem;
@@ -546,7 +559,7 @@ section > .inner {
 .card-detail > .inner {
   width: 32.5rem;
   margin: 0 auto;
-  background: rgba(255, 255, 0, 0.2);
+  /* background: rgba(255, 255, 0, 0.2); */
   height: 100%;
 
   position: relative;
@@ -558,7 +571,7 @@ section > .inner {
   background: url(../img/ico-pine-2-3.svg) no-repeat 50%;
   width: 4.8rem;
   height: 5rem;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 
   position: absolute;
   bottom: 0;
@@ -620,8 +633,8 @@ section > .inner {
 
 .project-text .swiper-slide {
   height: 12rem;
-  border: 1px solid #000;
-  background: rgba(255, 0, 0, 0.2);
+  /* border: 1px solid #000; */
+  /* background: rgba(255, 0, 0, 0.2); */
   padding: 3rem 0;
 
   width: 64.2rem !important;
@@ -646,7 +659,7 @@ section > .inner {
 
 .project-text .swiper-slide .project-title span {
   position: absolute;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   display: flex;
 
   justify-content: center;
@@ -724,7 +737,7 @@ section > .inner {
 .project-img-wrap {
   /* width: 70%; */
   width: 75.4rem;
-  background: rgba(0, 255, 0, 0.2);
+  /* background: rgba(0, 255, 0, 0.2); */
   height: 100%;
 }
 
@@ -759,4 +772,106 @@ section > .inner {
 }
 .btn-down {
   transform: rotate(180deg);
+}
+
+.graphic-allwrap {
+  margin-top: 9rem;
+}
+
+.graphic-tag-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-prev {
+  transform: rotate(-90deg);
+}
+
+.btn-next {
+  transform: rotate(90deg);
+}
+
+.graphic-list-wrap {
+  margin-top: 3rem;
+}
+.graphic-slider .swiper-slide {
+  width: 40rem;
+  height: 50rem;
+  background: var(--cream);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.graphic-slider .swiper-slide figure {
+  width: 100%;
+  height: 100%;
+}
+.graphic-slider .swiper-slide figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 좌우로 넘어가는 스와이퍼 가리기 */
+.portfolio > .inner {
+  overflow: hidden;
+}
+
+/* Section 03 : contact  */
+.contact {
+  padding: 16rem 0;
+}
+
+.contact-wrap {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40rem;
+}
+.contact-pic {
+  width: 45%;
+  height: 100%;
+  background: var(--cream);
+  border-radius: 2rem;
+}
+
+.contact-text {
+  /* border: 1px solid #000; */
+  padding: 0 5rem;
+  width: 45%;
+  height: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.contact-text dl {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+.contact-text dl dt {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--black);
+}
+.contact-text dl dd {
+  color: var(--black2);
+  font-family: 'pretendard';
+  font-size: 1.8rem;
+}
+
+.contact-text dl dd span:nth-of-type(1) {
+  padding-right: 2rem;
+  border-right: 1px solid var(--black);
+}
+
+.contact-text dl dd span:nth-of-type(2) {
+  padding-left: 2rem;
+  font-family: 'poppins';
 }

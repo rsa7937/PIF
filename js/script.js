@@ -13,7 +13,7 @@ $(function () {
 
     slidesPerView: 'auto',
     spaceBetween: 20,
-    // Navigation arrows
+
     navigation: {
       nextEl: '.btn-down',
       prevEl: '.btn-up',
@@ -38,4 +38,37 @@ $(function () {
 
   projectImg.controller.control = projectText;
   projectText.controller.control = projectImg;
+
+  const graphicSlider = new Swiper('.graphic-slider', {
+    speed: 500,
+    loop: true,
+    loopedSlides: 6,
+
+    autoplay: { delay: 5000 },
+
+    slideToClickedSlide: true,
+
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.btn-next',
+      prevEl: '.btn-prev',
+    },
+  });
+
+  const $menu = $('.gnb > li');
+  const duration = 300;
+
+  $menu.on('mouseenter', function () {
+    $(this).addClass('hover');
+  });
+
+  $menu.on('mouseleave', function () {
+    $(this).removeClass('hover');
+  });
+  $menu.on('click', function () {
+    $menu.removeClass('active');
+    $(this).addClass('active');
+  });
 });
