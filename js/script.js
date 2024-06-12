@@ -67,6 +67,7 @@ $(function () {
   $menu.on('mouseleave', function () {
     $(this).removeClass('hover');
   });
+
   $menu.on('click', function () {
     $menu.removeClass('active');
     $(this).addClass('active');
