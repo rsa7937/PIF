@@ -274,6 +274,9 @@ section > .inner {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.icon-ani1 {
+  overflow: hidden;
+}
 .icon-ani1,
 .icon-ani4,
 .icon-ani5 {
@@ -332,6 +335,10 @@ section > .inner {
 .icon-ani4 span:nth-of-type(3) {
   background: var(--yellow);
 }
+.icon-ani5 {
+  /* overflow: hidden;
+  border-radius: 50%; */
+}
 .icon-ani5 > .ani5-clip {
   display: block;
   width: 50%;
@@ -339,19 +346,25 @@ section > .inner {
   /* border: 1px solid #000; */
 }
 .ani5-clip {
-  border: 1px solid #000;
-  /* overflow: hidden; */
+  /* border: 1px solid #000; */
+  overflow: hidden;
 }
 .icon-ani5 .ani5-clip > span {
   display: block;
-  width: 5rem;
+  width: 10rem;
   height: 10rem;
 }
 .icon-ani5 .ani5-clip .icon-ani5-sec1 {
-  background: url(../img/visual-con-sec1-1.svg) no-repeat 0 0;
+  background: url(../img/visual-con-sec5-3.svg) no-repeat 0 0;
 }
 .icon-ani5 .ani5-clip .icon-ani5-sec2 {
-  background: url(../img/visual-con-sec1-2.svg) no-repeat 0 0%;
+  background: url(../img/visual-con-sec5-3.svg) no-repeat 0 0;
+}
+.icon-ani5 .ani5-clip .icon-ani5-sec3 {
+  background: url(../img/visual-con-sec5-3.svg) no-repeat 0 0;
+}
+.icon-ani5 .ani5-clip .icon-ani5-sec4 {
+  background: url(../img/visual-con-sec5-3.svg) no-repeat 0 0;
 }
 
 /* Section 01 : about */
@@ -772,23 +785,29 @@ section > .inner {
   height: 100%;
   overflow: hidden;
 }
+.project-text-wrap {
+  width: 64.2rem !important;
+}
+.project-text {
+  padding-bottom: 28rem;
+}
 .project-text .swiper-wrapper {
   width: 100%;
 }
 
 .project-text .swiper-slide {
+  width: 100%;
   height: 12rem;
   /* border: 1px solid #000; */
   /* background: rgba(255, 0, 0, 0.2); */
   padding: 3rem 0;
 
-  width: 64.2rem !important;
   border-radius: 1.6rem;
   color: rgba(17, 17, 17, 0.5);
   border: 2px solid var(--line);
   background: #eee;
 
-  transition: 0.4s;
+  /* transition: 0.4s; */
 }
 
 /* 프로젝트 텍스트 타이틀 */
@@ -898,6 +917,8 @@ section > .inner {
   border: 1px solid #f00;
   height: 100%;
   object-fit: cover;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 .btn-wrap {
   display: flex;

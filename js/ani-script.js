@@ -50,12 +50,19 @@ $(function () {
   function iconAni5() {
     const iconTL5 = gsap.timeline({});
 
-    iconTL5.set('.ani5-clip .icon-ani5-sec1', { rotate: -90, transformOrigin: 'left center' });
-    iconTL5.set('.ani5-clip .icon-ani5-sec2', { transformOrigin: 'left center' });
-    // iconTL5.to('.icon-ani5-sec2', { rotate: 10 });
+    iconTL5.set('.ani5-clip .icon-ani5-sec1', { transformOrigin: 'center center' });
+    iconTL5.set('.ani5-clip .icon-ani5-sec2', { xPercent: -50, rotate: -90, transformOrigin: 'center center' });
+    iconTL5.set('.ani5-clip .icon-ani5-sec3', { yPercent: -50, rotate: -180, transformOrigin: 'center center' });
+    iconTL5.set('.ani5-clip .icon-ani5-sec4', {
+      xPercent: -50,
+      yPercent: -50,
+      rotate: 180,
+      transformOrigin: 'center center',
+    });
 
-    iconTL5.to('.ani5-clip .icon-ani5-sec1', {});
-    iconTL5.to('.ani5-clip .icon-ani5-sec2', { rotate: -90 });
-    iconTL5.to('.ani5-clip .icon-ani5-sec2', { xPercent: 100 });
+    iconTL5.to('.ani5-clip .icon-ani5-sec1', { rotate: 270, dutaion: 2, ease: 'elastic.inOut(1,10)' });
+    iconTL5.to('.ani5-clip .icon-ani5-sec2', { rotate: 90, dutaion: 2, ease: 'elastic.inOut(1,10)' });
+    iconTL5.to('.ani5-clip .icon-ani5-sec4', { rotate: -45, dutaion: 2, ease: 'elastic.inOut(1,10)' });
+    iconTL5.to('.ani5-clip .icon-ani5-sec3', { rotate: 90, dutaion: 2, ease: 'elastic.inOut(1,10)' });
   }
 });

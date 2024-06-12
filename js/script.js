@@ -5,9 +5,9 @@ $(function () {
     loopedSlides: 6,
     direction: 'vertical',
 
-    // autoplay: { delay: 5000 },
+    autoplay: { delay: 5000 },
 
-    // centeredSlides: true,
+    centeredSlides: true,
 
     slideToClickedSlide: true,
 
@@ -29,7 +29,7 @@ $(function () {
 
     // centeredSlides: true,
 
-    // slideToClickedSlide: true,
+    slideToClickedSlide: true,
 
     slidesPerView: 1,
     spaceBetween: 20,
