@@ -20,18 +20,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <script src="./js/script.js"></script>
   <script src="./js/ani-script.js"></script>
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
   <!-- 사이트 최초 진입시 보이는 애니메이션 -->
-  <!-- <div class="logo-ani-wrap">
+  <div class="logo-ani-wrap">
     <div class="logo-ani">
       <video src="./img/intro-ani.mp4" muted autoplay playsinline></video>
     </div>
     <button type="button" class="btn-skip">Click to Skip</button>
-  </div> -->
+  </div>
 
   <!-- nav가 상단이 아니라 사이드에 있어도 Header로 잡는지? -->
   <!-- header랑 main이랑 같이 flex 시켜도 되는 것이 맞는지? -->
@@ -46,7 +46,7 @@
               <a href="#"><i class="hidden">Pine is Fine!</i></a>
             </h1>
             <ul class="gnb">
-              <li><a href="#section0"><b>intro</b></a></li>
+              <li class="active"><a href="#section0"><b>intro</b></a></li>
               <li><a href="#section1"><b>about</b></a></li>
               <li><a href="#section2"><b>portfolio</b></a></li>
               <li><a href="#section3"><b>contact</b></a></li>
@@ -60,10 +60,9 @@
       <main id="container">
         <!-- Section 00 : intro | visual -->
         <section id="section0" class="visual">
-          <div class="inner">
-            <div class="visual-video">
-              <!-- intro 영상 삽입 -->
-            </div>
+
+          <div class="visual-video">
+            <!-- intro 영상 삽입 -->
             <div class="visual-con">
               <span>00</span>
               <h2>2024 <strong>Portfolio</strong></h2>
@@ -93,6 +92,8 @@
               </div>
             </div>
           </div>
+
+
         </section>
         <!-- Section 01 : about -->
         <section id="section1" class="about">

@@ -1,6 +1,4 @@
 $(function () {
-  introIcoAni();
-
   function introIcoAni() {
     iconAni1();
     iconAni2();

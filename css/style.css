@@ -72,6 +72,8 @@ body {
   word-break: keep-all;
   letter-spacing: -0.05rem;
   position: relative;
+
+  overflow-y: hidden;
 }
 /* 메인화면 초기 진입시 보이는 로고 애니메이션 */
 .logo-ani-wrap {
@@ -107,7 +109,7 @@ body {
 .total-wrap {
   background: rgb(255, 255, 255);
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, rgba(250, 250, 250, 1) 70%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .wrap {
@@ -115,7 +117,7 @@ body {
   display: flex;
   position: relative;
   max-width: 192rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* header */
@@ -173,7 +175,7 @@ body {
   background: var(--gray);
 
   counter-increment: index-count;
-  transition: 0.4s;
+  transition: 0.5s;
   border: 2px solid var(--gray);
 }
 
@@ -205,9 +207,10 @@ body {
 #container {
   width: 80%;
   background: var(--white1);
-  padding: 0 0 0 20%;
+  /* padding: 0 0 0 20%; */
 
-  margin: 0 auto;
+  margin-left: auto;
+  /* background: #ff5; */
 }
 
 section > .inner {
@@ -226,14 +229,17 @@ section > .inner {
   position: relative;
 }
 .visual-video {
-  width: 100%;
+  /* width: 100%; */
+  margin: 0 auto;
+  width: 141.6rem;
   height: 74.2rem;
-  height: 84rem;
+  height: 80rem;
   /* height: 80vh; */
   background: var(--dark-green);
   border-radius: 2rem;
 
   position: relative;
+  transform-origin: 100% 0;
 }
 .visual-con {
   position: absolute;
@@ -247,7 +253,8 @@ section > .inner {
   width: 80%;
   width: 85.8757%;
   /* height: 100%; */
-  height: 60.2rem;
+  height: 65.2rem;
+  /* height: 38vw; */
   /* height: 65vh; */
 
   /* background: rgba(255, 255, 255, 0.2); */
@@ -256,7 +263,7 @@ section > .inner {
   flex-direction: column;
   justify-content: space-between;
 
-  background: rgba(red, green, blue, alpha);
+  /* background: rgba(red, green, blue, alpha); */
 }
 .visual-con span {
   font-size: 1.4rem;
