@@ -61,6 +61,7 @@ hr,
 html {
   scroll-behavior: smooth;
 }
+
 html,
 body {
   overflow-x: hidden;
@@ -70,11 +71,43 @@ body {
   color: var(--black);
   word-break: keep-all;
   letter-spacing: -0.05rem;
+  position: relative;
+}
+/* 메인화면 초기 진입시 보이는 로고 애니메이션 */
+.logo-ani-wrap {
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+}
+.logo-ani {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.logo-ani-wrap .btn-skip {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  background: var(--green);
+  font-weight: 600;
+  color: var(--cream);
 }
 
 .total-wrap {
   background: rgb(255, 255, 255);
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, rgba(250, 250, 250, 1) 70%);
+  overflow: hidden;
 }
 
 .wrap {
@@ -97,6 +130,7 @@ body {
   height: 100vh;
 
   position: fixed;
+  top: 0;
   z-index: 10;
   /* border: 1px solid #000; */
 }
@@ -195,7 +229,7 @@ section > .inner {
   width: 100%;
   height: 74.2rem;
   height: 84rem;
-  height: 80vh;
+  /* height: 80vh; */
   background: var(--dark-green);
   border-radius: 2rem;
 
@@ -214,7 +248,7 @@ section > .inner {
   width: 85.8757%;
   /* height: 100%; */
   height: 60.2rem;
-  height: 65vh;
+  /* height: 65vh; */
 
   /* background: rgba(255, 255, 255, 0.2); */
 

@@ -1,0 +1,317 @@
+@charset 'utf-8';
+
+/* 영문 폰트 : Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 한문 폰트 : Pretendard */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* Common */
+:root {
+  font-size: 62.5%;
+
+  /* color */
+  --black: #2c2c2c;
+  --black2: #555;
+  --white: #fff;
+  --white1: #fafafa;
+
+  --gray: #f5f5f5;
+
+  --cream: #f8edd9;
+
+  --green: #317039;
+  --dark-green: #143021;
+
+  --red: #dd5c35;
+  --yellow: #f1be49;
+
+  --line: rgba(170, 170, 170, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--cream);
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  /* overflow-x: hidden; */
+}
+body {
+  font: 1.6rem/1.6 'Poppins', 'Pretendard', sans-serif;
+  color: var(--black);
+  word-break: keep-all;
+  letter-spacing: -0.05rem;
+
+  position: relative;
+}
+
+.total-wrap {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, rgba(250, 250, 250, 1) 70%);
+}
+
+.wrap {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  max-width: 192rem;
+  /* overflow: hidden; */
+}
+
+/* 프로젝트 텍스트 스와이퍼 */
+.project-allwrap {
+  margin-top: 20rem;
+}
+.project-swiper-wrap {
+  display: flex;
+  justify-content: center;
+  height: 90rem;
+  margin-top: 3rem;
+  gap: 2rem;
+  position: relative;
+  background: #ff0;
+  /* overflow: hidden; */
+}
+
+.project-text .inner {
+  width: 44.2rem;
+  margin: 0 auto;
+}
+.project-text {
+  width: 100%;
+  height: 100%;
+}
+.project-text-wrap {
+  width: 64.2rem !important;
+  height: 120rem;
+  border: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #f00;
+}
+.project-text {
+  /* position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); */
+}
+.project-text .swiper-wrapper {
+  width: 100%;
+}
+
+.project-text .swiper-slide {
+  width: 100%;
+  height: 12rem;
+  /* border: 1px solid #000; */
+  /* background: rgba(255, 0, 0, 0.2); */
+  padding: 3rem 0;
+
+  border-radius: 1.6rem;
+  color: rgba(17, 17, 17, 0.5);
+  border: 2px solid var(--line);
+  background: #eee;
+
+  /* transition: 0.4s; */
+}
+
+/* 프로젝트 텍스트 타이틀 */
+
+.project-text .swiper-slide .project-title {
+  position: relative;
+}
+.project-text .swiper-slide .project-title strong {
+  display: block;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.project-text .swiper-slide .project-title span {
+  position: absolute;
+  /* border: 1px solid #000; */
+  display: flex;
+
+  justify-content: center;
+  width: 4rem;
+  height: 5rem;
+  font-weight: 700;
+  font-size: 3.2rem;
+
+  top: 0%;
+  left: -5.5rem;
+}
+
+.project-text .swiper-slide .project-info-wrap .project-title span,
+.project-info-wrap strong {
+  color: var(--black);
+}
+.project-text .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.project-text .swiper-slide.swiper-slide-active .inner > .project-title {
+  display: none;
+}
+
+/* 활성화되기전 슬라이드 세부 정보 보이지 않기*/
+.project-text .swiper-slide .project-info-wrap {
+  display: none;
+}
+/* 활성화되면 슬라이드 세부 정보 보이기*/
+.project-text .swiper-slide.swiper-slide-active .project-info-wrap {
+  display: block;
+}
+
+.project-info-wrap .project-tag-list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.project-info-wrap .tag {
+  color: var(--cream);
+  font-size: 1.4rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--red);
+  border-radius: 5rem;
+  font-weight: 500;
+}
+
+.project-info-wrap .project-info-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5.4rem;
+}
+.project-info-wrap .project-info-detail dl {
+  display: flex;
+  gap: 2rem;
+  color: var(--black2);
+}
+.project-info-wrap .project-info-detail dt {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.project-info-wrap .project-info-detail dd {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.project-text .swiper-slide.swiper-slide-active {
+  border: 2px solid var(--green);
+  background: var(--white);
+  height: 39rem !important;
+}
+
+/* 프로젝트 이미지 스와이퍼 */
+.project-img-wrap {
+  /* width: 70%; */
+  width: 75.4rem;
+  /* background: rgba(0, 255, 0, 0.2); */
+  height: 100%;
+}
+
+.project-img {
+  height: 100%;
+  overflow: hidden;
+
+  border-radius: 2rem;
+}
+
+.project-img .swiper-slide {
+  width: 100%;
+  border: 1px solid #f00;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.btn-wrap {
+  display: flex;
+  gap: 1.6rem;
+}
+.btn-wrap button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  background: var(--white1) url(../img/ico-arrow-green.svg) no-repeat 50%;
+}
+
+.project-tag-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-down {
+  transform: rotate(180deg);
+}
+
+.graphic-allwrap {
+  margin-top: 9rem;
+}
+
+.graphic-tag-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-prev {
+  transform: rotate(-90deg);
+}
+
+.btn-next {
+  transform: rotate(90deg);
+}
+
+.graphic-list-wrap {
+  margin-top: 3rem;
+}
+.graphic-slider .swiper-slide {
+  width: 40rem;
+  height: 50rem;
+  background: var(--cream);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.graphic-slider .swiper-slide figure {
+  width: 100%;
+  height: 100%;
+}
+.graphic-slider .swiper-slide figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 좌우로 넘어가는 스와이퍼 가리기 */
+.portfolio > .inner {
+  overflow: hidden;
+}

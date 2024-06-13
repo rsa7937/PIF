@@ -1,9 +1,13 @@
 $(function () {
-  iconAni1();
-  iconAni2();
-  iconAni3();
-  iconAni4();
-  iconAni5();
+  introIcoAni();
+
+  function introIcoAni() {
+    iconAni1();
+    iconAni2();
+    iconAni3();
+    iconAni4();
+    iconAni5();
+  }
 
   function iconAni1() {
     const iconTL1 = gsap.timeline({ repeat: -1, yoyo: true });
