@@ -65,51 +65,87 @@
       border: 1px solid #000;
       background: rgba(255, 255, 0, 0.2);
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      width: 100%;
+      margin-top: 50px;
+      margin-left: 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    /*Flip card animation on hover*/
+
+    .flip-card-container {
+      background-color: transparent;
+      transform: translate3d(0, 0, 0);
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+      transition: transform .5s;
+      /*This container will be transformed*/
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-color: purple;
+    }
+
+    .flip-card-back {
+      background-color: black;
+      transform: rotateY(180deg);
+      color: #fff;
+    }
+
+    .flip-card-container:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
   </style>
 </head>
 
 <body>
-  <!-- Swiper -->
-  <div class="swiper-wrap">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="inner">Slide 1</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="inner">Slide 2</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="inner">Slide 3</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="inner">Slide 4</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="inner">Slide 5</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="inner">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, quaerat. Omnis,
-            esse optio? Obcaecati sint architecto amet accusantium perferendis officia ea deserunt minus qui, culpa
-            eaque.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, quaerat. Omnis,
-            esse optio? Obcaecati sint architecto amet accusantium perferendis officia ea deserunt minus qui, culpa
-            eaque.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, quaerat. Omnis,
-            esse optio? Obcaecati sint architecto amet accusantium perferendis officia ea deserunt minus qui, culpa
-            eaque.
-
-          </div>
-        </div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+  <div id="wrapper">
+    <div class="flip-card-container container">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Hello</div>
+        <div class="flip-card-back">Goodbye</div>
       </div>
-      <div class="swiper-pagination"></div>
     </div>
   </div>
-
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

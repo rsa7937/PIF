@@ -275,11 +275,10 @@ section > .inner {
   font-weight: 600;
   letter-spacing: -0.2rem;
   line-height: 0.95;
-  /* border: 1px solid #000; */
+  border: 1px solid #000;
   position: relative;
 }
-.visual-con h2::after {
-  content: '';
+.visual-con h2 b {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -700,11 +699,13 @@ section > .inner {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20rem;
+  width: 0rem;
+  /* width: 20rem; */
   height: 0.5rem;
   border-radius: 5rem;
   background: var(--red);
 }
+
 .info2 ul li figure {
   width: 4rem;
   height: 4rem;
@@ -839,7 +840,8 @@ section > .inner {
   overflow: hidden;
 }
 .project-text-wrap {
-  width: 64.2rem !important;
+  /* width: 64.2rem !important; */
+  width: 45.339% !important;
 }
 .project-text {
   padding-bottom: 28rem;
@@ -953,7 +955,8 @@ section > .inner {
 /* 프로젝트 이미지 스와이퍼 */
 .project-img-wrap {
   /* width: 70%; */
-  width: 75.4rem;
+  /* width: 75.4rem; */
+  width: 53.2486% !important;
   /* background: rgba(0, 255, 0, 0.2); */
   height: 100%;
 }

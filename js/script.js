@@ -1,39 +1,46 @@
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
+  $(document).ready(function () {
+    $('html').scrollTop(0);
+  });
+
+  $(window).on('load', function () {
+    $('html').scrollTop(0);
+  });
+
   // LOGO Animation
-  const $btnSkip = $('.btn-skip');
-  const $logoAniWrap = $('.logo-ani-wrap');
 
-  // gsap.from('#container', { width: '100%', duration: 3, backgroundColor: '#ffffff' });
+  // 비디오가 다 재생된 후, 또는 비디오를 스킵한 후 플레이되는 로딩(헤더와 메인이 뜨는) 애니메이션 함수
+  function loadAni() {
+    const $logoAniWrap = $('.logo-ani-wrap');
+    const loadTL = gsap.timeline();
 
-  // gsap.set('#header', { xPercent: -500 });
-
-  $('.btn-skip').on('click', function () {
-    const skipTL = gsap.timeline();
-
-    skipTL.to($btnSkip, { y: -20, rotation: 10, autoAlpha: 1, duration: 1, ease: 'elastic.out(1,0.8)' });
-    skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 2, ease: 'bounce.out' }, '-=.5');
-    skipTL.to($logoAniWrap, { yPercent: -200, duration: 1.5, ease: 'power4.inOut' }, '-=1');
-    skipTL.from('.total-wrap', { marginTop: 1000, duration: 1.5, ease: 'power4.inOut' }, '<');
+    loadTL.to($logoAniWrap, { yPercent: -200, duration: 1.2, ease: 'power4.inOut' }, '<');
+    loadTL.from('.total-wrap', { marginTop: 1000, duration: 1.2, ease: 'power4.inOut' }, '<');
 
     setTimeout(function () {
       $('.logo-ani-wrap').hide();
-    }, 4000);
+    }, 6000);
 
-    skipTL.from('.visual-video', {
-      // transformOrigin: 'right top',
-      duration: 1.5,
-      scale: 1.2,
-      width: '100%',
-      backgroundColor: '#143021',
-      ease: 'power4.inOut',
-      top: '50%',
-    });
-    skipTL.from(
+    loadTL.from(
+      '.visual-video',
+      {
+        // transformOrigin: 'right top',
+        duration: 1.2,
+        scale: 1.15,
+        // width: '100%',
+        backgroundColor: '#143021',
+        ease: 'power4.inOut',
+        // top: '50%',
+      },
+      '-=0.5'
+    );
+
+    loadTL.from(
       '.visual-con',
       {
         transformOrigin: 'top center',
-        duration: 1.5,
+        duration: 1.2,
         // scale: ,
         // width: '1920px',
         // backgroundColor: '#143021',
@@ -41,11 +48,11 @@ $(function () {
       },
       '<'
     );
-    skipTL.from(
+    loadTL.from(
       '#section1',
       {
         transformOrigin: 'top center',
-        duration: 1.5,
+        duration: 1.2,
         marginTop: 1000,
         ease: 'power4.inOut',
         // width: '1920px'
@@ -54,27 +61,35 @@ $(function () {
     );
     // skipTL.to('#container', { paddingLeft: 384, duration: 2.5, width: '80%', ease: 'power4.inOut' });
 
-    skipTL.from(
+    loadTL.from(
       '#header',
-      {
-        xPercent: -500,
-        duration: 1.5,
-        ease: 'power4.inOut',
-        onComplete: () => introIcoAni(),
-      },
+      { xPercent: -500, duration: 1.2, ease: 'power4.inOut', onComplete: () => introIcoAni() },
       '<'
     );
+    loadTL.to('#container', { backgroundColor: '#fafafa', duration: 1, ease: 'power4.inOut' });
+  }
+  // 비디오가 다 재생된 후,
+  $('.logo-ani video').on('ended', loadAni);
 
-    skipTL.to('#container', {
-      backgroundColor: '#fafafa',
+  // 비디오를 스킵한 후
+  const $btnSkip = $('.btn-skip');
+  $('.btn-skip').on('click', function () {
+    const skipTL = gsap.timeline();
+    skipTL.to($btnSkip, {
+      y: -20,
+      rotation: 10,
+      autoAlpha: 1,
       duration: 1,
-      ease: 'power4.inOut',
+      ease: 'elastic.out(1,0.8)',
+      onComplete: loadAni,
     });
+    skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 1, ease: 'bounce.out' }, '-=.5');
   });
 
   // Header : Anchor
   const $menu = $('.gnb > li');
-  const duration = 300;
+  const sectionEl = gsap.utils.toArray('section');
+  const liEl = gsap.utils.toArray('.gnb > li');
 
   $menu.on('mouseenter', function () {
     $(this).addClass('hover');
@@ -84,50 +99,15 @@ $(function () {
     $(this).removeClass('hover');
   });
 
-  // $menu.on('click', function () {
-  //   $menu.removeClass('active');
-  //   $(this).addClass('active');
-  // });
-  gsap.to('#section0', {
-    scrollTrigger: {
-      trigger: '#section0',
-      markers: true,
-
-      start: 'top 0%',
-      end: 'bottom 50%',
-
-      toggleClass: { targets: '.gnb > li:nth-child(1)', className: 'active' },
-    },
-  });
-  gsap.to('#section1', {
-    scrollTrigger: {
-      trigger: '#section1',
-      markers: true,
-      start: 'top 50%',
-      end: 'bottom 50%',
-
-      toggleClass: { targets: '.gnb > li:nth-child(2)', className: 'active' },
-    },
-  });
-  gsap.to('#section2', {
-    scrollTrigger: {
-      trigger: '#section2',
-      markers: true,
-      start: 'top 50%',
-      end: 'bottom 50%',
-
-      toggleClass: { targets: '.gnb > li:nth-child(3)', className: 'active' },
-    },
-  });
-  gsap.to('#section3', {
-    scrollTrigger: {
-      trigger: '#section3',
-      markers: true,
-      start: 'top 50%',
-      end: 'bottom 50%',
-
-      toggleClass: { targets: '.gnb > li:nth-child(4)', className: 'active' },
-    },
+  console.log(sectionEl);
+  sectionEl.forEach((sec, index) => {
+    ScrollTrigger.create({
+      trigger: sec,
+      markers: false,
+      start: 'top 60%',
+      end: 'bottom 60%',
+      toggleClass: { targets: liEl[index], className: 'active' },
+    });
   });
 
   // Main : Portfolio Swiper
@@ -143,7 +123,7 @@ $(function () {
 
     slideToClickedSlide: true,
 
-    slidesPerView: 'auto',
+    slidesPerView: 6,
     spaceBetween: 20,
 
     navigation: {
@@ -151,6 +131,7 @@ $(function () {
       prevEl: '.btn-up',
     },
   });
+
   const projectImg = new Swiper('.project-img', {
     speed: 500,
     loop: true,
@@ -189,12 +170,14 @@ $(function () {
     },
   });
 
+  // Main Visual Icon animation
   function introIcoAni() {
     iconAni1();
     iconAni2();
     iconAni3();
     iconAni4();
     iconAni5();
+    iconAni6();
   }
 
   function iconAni1() {
@@ -254,4 +237,53 @@ $(function () {
     iconTL5.to('.icon-ani5-sec1', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
     iconTL5.to('.icon-ani5-sec1', { xPercent: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
   }
+
+  function iconAni6() {
+    gsap.to('.visual-con h2 b', { y: -10, duration: 0.5, repeat: -1, ease: 'power4.inOut', yoyo: true });
+  }
+
+  // Main : About [02] profile
+  const arrTL = gsap.timeline();
+  arrTL.from('.name-deco span', {
+    xPercent: -100,
+    yPercent: 100,
+    autoAlpha: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power4.inOut',
+    scrollTrigger: {
+      trigger: '.profile',
+      markers: true,
+      start: 'top 100%',
+      end: 'bottom 60%',
+      toggleActions: 'play none restart none',
+      scrub: 1,
+    },
+  });
+
+  // lvBarEl.forEach(index)
+
+  const lvBarEl = gsap.utils.toArray('.info2 ul li .levelbar-wrap .levelbar');
+  console.log(lvBarEl);
+
+  lvBarEl.forEach((item, index) => {
+    const lvWidthArr = ['26rem', '24rem', '20rem', '20rem', '21rem', '22rem', '16rem', '24rem', '20rem'];
+    // lvBarEl[index].css('width', lvWidthArr[index]);
+    console.log(lvBarEl[index]);
+    $(lvBarEl[index]).css('width', `${lvWidthArr[index]}`);
+
+    gsap.from(lvBarEl[index], {
+      width: 0,
+      duration: 0.2,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.profile',
+        markers: true,
+        start: 'top 100%',
+        end: 'bottom 60%',
+        toggleActions: 'play none restart none',
+        scrub: 1,
+      },
+    });
+  });
 });
