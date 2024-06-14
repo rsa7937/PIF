@@ -6,23 +6,23 @@ $(function () {
 
   // gsap.from('#container', { width: '100%', duration: 3, backgroundColor: '#ffffff' });
 
-  gsap.set('#header', { xPercent: -500 });
+  // gsap.set('#header', { xPercent: -500 });
 
   $('.btn-skip').on('click', function () {
     const skipTL = gsap.timeline();
 
-    skipTL.to($btnSkip, { y: -20, rotation: 10, autoAlpha: 1, duration: 3, ease: 'elastic.out(1,0.3)' });
-    skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 3, ease: 'bounce.out' }, '-=2.5');
-    skipTL.to($logoAniWrap, { yPercent: -200, duration: 3, ease: 'power4.inOut' }, '-=2');
-    skipTL.from('.total-wrap', { marginTop: 1000, duration: 3, ease: 'power4.inOut' }, '<');
+    skipTL.to($btnSkip, { y: -20, rotation: 10, autoAlpha: 1, duration: 1, ease: 'elastic.out(1,0.8)' });
+    skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 2, ease: 'bounce.out' }, '-=.5');
+    skipTL.to($logoAniWrap, { yPercent: -200, duration: 1.5, ease: 'power4.inOut' }, '-=1');
+    skipTL.from('.total-wrap', { marginTop: 1000, duration: 1.5, ease: 'power4.inOut' }, '<');
 
     setTimeout(function () {
       $('.logo-ani-wrap').hide();
-    }, 6000);
+    }, 4000);
 
     skipTL.from('.visual-video', {
       // transformOrigin: 'right top',
-      duration: 3,
+      duration: 1.5,
       scale: 1.2,
       width: '100%',
       backgroundColor: '#143021',
@@ -33,32 +33,32 @@ $(function () {
       '.visual-con',
       {
         transformOrigin: 'top center',
-        duration: 3,
+        duration: 1.5,
         // scale: ,
         // width: '1920px',
         // backgroundColor: '#143021',
         ease: 'power4.inOut',
       },
-      '-=3'
+      '<'
     );
     skipTL.from(
       '#section1',
       {
         transformOrigin: 'top center',
-        duration: 2,
+        duration: 1.5,
         marginTop: 1000,
         ease: 'power4.inOut',
         // width: '1920px'
       },
-      '-=2.5'
+      '<'
     );
     // skipTL.to('#container', { paddingLeft: 384, duration: 2.5, width: '80%', ease: 'power4.inOut' });
 
-    skipTL.to(
+    skipTL.from(
       '#header',
       {
-        xPercent: 0,
-        duration: 2.5,
+        xPercent: -500,
+        duration: 1.5,
         ease: 'power4.inOut',
         onComplete: () => introIcoAni(),
       },
