@@ -117,13 +117,13 @@ $(function () {
     loopedSlides: 6,
     direction: 'vertical',
 
-    autoplay: { delay: 5000 },
+    autoplay: { delay: 2000, disableOnInteraction: false },
 
     // centeredSlides: true,
 
     slideToClickedSlide: true,
 
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     spaceBetween: 20,
 
     navigation: {
