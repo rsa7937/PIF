@@ -1,0 +1,250 @@
+@charset 'utf-8';
+
+/* 영문 폰트 : Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 한문 폰트 : Pretendard */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* Common */
+:root {
+  font-size: 62.5%;
+
+  /* color */
+  --black: #2c2c2c;
+  --black2: #555;
+  --white: #fff;
+  --white1: #fafafa;
+
+  --gray: #f5f5f5;
+
+  --cream: #f8edd9;
+
+  --green: #317039;
+  --dark-green: #143021;
+
+  --red: #dd5c35;
+  --yellow: #f1be49;
+
+  --line: rgba(170, 170, 170, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--cream);
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font: 1.6rem/1.6 'Poppins', 'Pretendard', sans-serif;
+  color: var(--black);
+  word-break: keep-all;
+  letter-spacing: -0.05rem;
+  position: relative;
+
+  overflow-y: hidden;
+}
+/* 메인화면 초기 진입시 보이는 로고 애니메이션 */
+.logo-ani-wrap {
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+}
+.logo-ani {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.logo-ani-wrap .btn-skip {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  background: var(--green);
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.total-wrap {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, rgba(250, 250, 250, 1) 70%);
+  /* overflow: hidden; */
+}
+
+.wrap {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  max-width: 192rem;
+  /* overflow: hidden; */
+}
+
+/* header */
+#header {
+  width: 38.4rem;
+  width: 20%;
+  background: var(--white);
+  /* border: 1px solid #000; */
+  /* 모든 화면에서 헤더 20%로 고정되는 현상 막기 */
+  max-width: 38.4rem;
+
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  /* border: 1px solid #000; */
+}
+
+#header .inner {
+  /* width: 30rem; */
+  width: 78.125%;
+  padding: 6rem 0;
+  margin: 0 auto;
+  /* background: rgba(255, 255, 0, 0.2); */
+  height: 100%;
+}
+
+.logo a {
+  display: block;
+  width: 14rem;
+  height: 5rem;
+  background: url(../img/logo.svg) no-repeat 50%;
+
+  /* border: 1px solid #000; */
+}
+
+.gnb {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+
+  margin-top: 23rem;
+
+  counter-reset: index-count;
+}
+.gnb li a {
+  display: flex;
+  width: 100%;
+  height: 6rem;
+  border-radius: 1rem;
+
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--gray);
+
+  counter-increment: index-count;
+  transition: 0.5s;
+  border: 2px solid var(--gray);
+}
+
+.gnb li a b {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.8rem;
+  align-items: center;
+  font-weight: 700;
+}
+.gnb li a b::before {
+  content: '0' counter(index-count);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.gnb li.hover a {
+  border: 2px solid var(--green);
+}
+.gnb li.active a {
+  height: 14rem;
+  align-items: flex-start;
+  padding-top: 2rem;
+  border: 2px solid var(--green);
+
+  background: var(--green);
+  color: var(--white);
+}
+
+/* 페이지 이동간 트랜지션 */
+
+.cover {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #317039; /* 원하는 색상으로 변경 가능 */
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  display: block;
+  width: 25.5rem;
+  height: 11.5rem;
+  background: transparent url(../img/loading-logo.svg);
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+}
+
+.main-wrap {
+  width: 80%;
+  margin-left: auto;
+}
+
+#container {
+  width: 100%;
+  background: var(--white1);
+  /* padding: 0 0 0 20%; */
+
+  /* margin-left: auto; */
+  /* background: #ff5; */
+}
+
+section > .inner {
+  width: 141.6rem;
+  width: 92.1875%;
+  margin: 0 auto;
+  /* background: rgba(255, 255, 0, 0.2); */
+}

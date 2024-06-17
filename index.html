@@ -10,16 +10,19 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/style.css">
 
+
   <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-transform/2.0.0/jquery.transform.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="./js/swiper-bundle.min.js"></script>
   <script src="./js/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
+  <script src="https://unpkg.com/@barba/core"></script>
   <!-- <script src="./js/ani-script.js"></script> -->
   <script src="./js/script.js"></script>
 </head>
@@ -37,7 +40,7 @@
   <!-- header랑 main이랑 같이 flex 시켜도 되는 것이 맞는지? -->
   <!-- 아니면 각각을 div로 잡고 감싸는 wrap도 div로 잡는 것이 맞을까용? -->
   <div class="total-wrap">
-    <div class="wrap">
+    <div class=" wrap">
       <!-- s : header -->
       <header id="header">
         <div class="inner">
@@ -57,515 +60,585 @@
       <hr>
       <!-- // e : header -->
       <!-- s : main -->
-      <main id="container">
-        <!-- Section 00 : intro | visual -->
-        <section id="section0" class="visual">
-
-          <div class="visual-video">
-            <!-- intro 영상 삽입 -->
-            <div class="visual-con">
-              <span>00</span>
-              <h2>
-                2024 <strong>Portfolio</strong>
-                <b></b>
-              </h2>
-
-
-              <div class="ani-wrap">
-                <div class="icon-ani1">
-                  <span class="icon-ani1-sec1"></span>
-                  <span class="icon-ani1-sec2"></span>
-                </div>
-                <div class="icon-ani2">
-                  <span class="icon-ani2-sec1"></span>
-                </div>
-                <div class="icon-ani3">
-                  <span class="icon-ani3-sec1"></span>
-                </div>
-                <div class="icon-ani4">
-                  <span class="icon-ani4-sec1"></span>
-                  <span class="icon-ani4-sec2"></span>
-                  <span class="icon-ani4-sec3"></span>
-                  <span class="icon-ani4-sec4"></span>
-                </div>
-                <div class="icon-ani5">
-                  <span class="icon-ani5-sec1"></span>
-                  <span class="icon-ani5-sec2"></span>
+      <div class="main-wrap">
+        <main id="container">
+          <!-- Section 00 : intro | visual -->
+          <section id="section0" class="visual">
+            <div class="visual-video">
+              <!-- intro 영상 삽입 -->
+              <div class="visual-con">
+                <span>00</span>
+                <h2>
+                  2024 <strong>Portfolio</strong>
+                  <b></b>
+                </h2>
+                <div class="ani-wrap">
+                  <div class="icon-ani1">
+                    <span class="icon-ani1-sec1"></span>
+                    <span class="icon-ani1-sec2"></span>
+                  </div>
+                  <div class="icon-ani2">
+                    <span class="icon-ani2-sec1"></span>
+                  </div>
+                  <div class="icon-ani3">
+                    <span class="icon-ani3-sec1"></span>
+                  </div>
+                  <div class="icon-ani4">
+                    <span class="icon-ani4-sec1"></span>
+                    <span class="icon-ani4-sec2"></span>
+                    <span class="icon-ani4-sec3"></span>
+                    <span class="icon-ani4-sec4"></span>
+                  </div>
+                  <div class="icon-ani5">
+                    <span class="icon-ani5-sec1"></span>
+                    <span class="icon-ani5-sec2"></span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-
-        </section>
-        <!-- Section 01 : about -->
-        <section id="section1" class="about">
-          <div class="inner">
-            <div class="sec-title">
-              <span>01</span>
-              <h2>about</h2>
-            </div>
-            <!-- Section 01 : about [01]introduce -->
-            <div class="introduce-wrap">
-              <div class="introduce">
-                <div class="introduce-text">
-                  <h3>
-                    안녕하세요!<br> 소나무 같은 디자이너 <b>류솔아</b> 입니다.
-                  </h3>
-                  <p>소나무처럼 올곧고 바르게 자라라는 이름같이<br>
-                    항상 위를 보며 성장하는 디자이너가 되고 싶습니다</p>
-                </div>
-                <div class="introduce-img">
-                  <figure>
-                    <img src="./img/introduce-logo.svg" alt="Pine is Fine">
-                    <p>소나무 너 참 좋은 친구구나!</p>
-                    <p>소나무는 괜찮아!</p>
-                  </figure>
+          </section>
+          <!-- Section 01 : about -->
+          <section id="section1" class="about">
+            <div class="inner">
+              <div class="sec-title">
+                <span>01</span>
+                <h2>about</h2>
+              </div>
+              <!-- Section 01 : about [01]introduce -->
+              <div class="introduce-wrap">
+                <div class="introduce">
+                  <div class="introduce-text">
+                    <h3>
+                      안녕하세요!<br> 소나무 같은 디자이너 <b>류솔아</b> 입니다.
+                    </h3>
+                    <p>소나무처럼 올곧고 바르게 자라라는 이름같이<br>
+                      항상 위를 보며 성장하는 디자이너가 되고 싶습니다</p>
+                  </div>
+                  <div class="introduce-img">
+                    <figure>
+                      <img src="./img/introduce-logo.svg" alt="Pine is Fine">
+                      <p>소나무 너 참 좋은 친구구나!</p>
+                      <p>소나무는 괜찮아!</p>
+                    </figure>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- Section 01 : about [02]profile -->
-            <div class="profile">
-              <div class="name-wrap">
-                <div class="name">
-                  <p>RYOO SOL A</p>
-                  <p>류솔아</p>
-                  <p>1997. 10. 13</p>
-                </div>
-                <div class="name-deco">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <div class="info-detail">
-                <div class="info1">
-                  <div class="info1-left">
-                    <div class="education">
-                      <strong>Education</strong>
-                      <dl>
-                        <dt>2016 - 2023</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur.</dd>
-                      </dl>
-                    </div>
-                    <div class="experience">
-                      <strong>Experience</strong>
-                      <dl>
-                        <dt>2020 - 2022</dt>
-                        <dd>Lorem ipsum dolor sit amet. <br>
-                          Lorem ipsum dolor sit amet consectetur.</dd>
-                      </dl>
-                    </div>
+              <!-- Section 01 : about [02]profile -->
+              <div class="profile">
+                <div class="name-wrap">
+                  <div class="name">
+                    <p>RYOO SOL A</p>
+                    <p>류솔아</p>
+                    <p>1997. 10. 13</p>
                   </div>
-                  <div class="info1-right">
-                    <div class="award">
-                      <strong>Award</strong>
-                      <dl>
-                        <dt>2020</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                      </dl>
-                      <dl>
-                        <dt>2020</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                      </dl>
-                      <dl>
-                        <dt>2020</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
-                      </dl>
-                    </div>
+                  <div class="name-deco">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
                 </div>
-                <div class="info2">
-                  <strong>Skill</strong>
-                  <ul>
-                    <li>
-                      <figure><img src="./img/ico-skill-figma.svg" alt="figma"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
+                <div class="info-detail">
+                  <div class="info1">
+                    <div class="info1-left">
+                      <div class="education">
+                        <strong>Education</strong>
+                        <dl>
+                          <dt>2016 - 2023</dt>
+                          <dd>Lorem ipsum dolor sit amet consectetur.</dd>
+                        </dl>
                       </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-illustrator.svg" alt="illustrator"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
+                      <div class="experience">
+                        <strong>Experience</strong>
+                        <dl>
+                          <dt>2020 - 2022</dt>
+                          <dd>Lorem ipsum dolor sit amet. <br>
+                            Lorem ipsum dolor sit amet consectetur.</dd>
+                        </dl>
                       </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-photoshop.svg" alt="photoshop"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
+                    </div>
+                    <div class="info1-right">
+                      <div class="award">
+                        <strong>Award</strong>
+                        <dl>
+                          <dt>2020</dt>
+                          <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                        </dl>
+                        <dl>
+                          <dt>2020</dt>
+                          <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                        </dl>
+                        <dl>
+                          <dt>2020</dt>
+                          <dd>Lorem ipsum dolor sit amet consectetur adipisicing. </dd>
+                        </dl>
                       </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-blender.svg" alt="blender"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-html.svg" alt="html"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-css.svg" alt="css"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-js.svg" alt="js"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-aftereffects.svg" alt="aftereffects"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                    <li>
-                      <figure><img src="./img/ico-skill-premiere.svg" alt="premiere"></figure>
-                      <div class="levelbar-wrap">
-                        <div class="levelbar"></div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- Section 01 : about [03]card -->
-            <div class="about-card">
-              <strong class="title-tag"># ABOUT with card</strong>
-              <ul class="card-list">
-                <li>
-                  <!-- 카드이미지 -->
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                  <!-- 카드 호버시 나오는 텍스트 -->
-                  <div class="card-detail">
-                    <div class="inner">
-                      <strong>Title</strong>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
-                        exercitationem
-                        repellat impedit soluta minima eum, facilis nam quo!</p>
                     </div>
                   </div>
-                </li>
-                <li>
-                  <!-- 카드이미지 -->
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                  <!-- 카드 호버시 나오는 텍스트 -->
-                  <div class="card-detail">
-                    <div class="inner">
-                      <strong>Title</strong>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
-                        exercitationem
-                        repellat impedit soluta minima eum, facilis nam quo!</p>
-                    </div>
+                  <div class="info2">
+                    <strong>Skill</strong>
+                    <ul>
+                      <li>
+                        <figure><img src="./img/ico-skill-figma.svg" alt="figma"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-illustrator.svg" alt="illustrator"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-photoshop.svg" alt="photoshop"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-blender.svg" alt="blender"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-html.svg" alt="html"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-css.svg" alt="css"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-js.svg" alt="js"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-aftereffects.svg" alt="aftereffects"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="./img/ico-skill-premiere.svg" alt="premiere"></figure>
+                        <div class="levelbar-wrap">
+                          <div class="levelbar"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                </li>
-                <li>
-                  <!-- 카드이미지 -->
-                  <figure>
-                    <img src="" alt="">
-                  </figure>
-                  <!-- 카드 호버시 나오는 텍스트 -->
-                  <div class="card-detail">
-                    <div class="inner">
-                      <strong>Title</strong>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
-                        exercitationem
-                        repellat impedit soluta minima eum, facilis nam quo!</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <!-- Section 02 : Portfolio -->
-        <section id="section2" class="portfolio">
-          <div class="inner">
-            <div class="sec-title">
-              <span>02</span>
-              <h2>portfolio</h2>
-            </div>
-            <!-- Section 02 : Portfolio [01]project -->
-            <div class="project-allwrap">
-              <div class="project-tag-wrap">
-                <strong class="title-tag"># Project</strong>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-up"><i class="hidden">위</i></button>
-                  <button type="button" class="btn-down"><i class="hidden">아래</i></button>
                 </div>
               </div>
-              <div class="project-swiper-wrap">
-                <div class="project-text-wrap">
-                  <div class="swiper project-text">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>01</span>
-                            <strong>Samsonite OnlineMall</strong>
-                          </div>
-                          <div class="project-info-wrap">
+              <!-- Section 01 : about [03]card -->
+              <div class="about-card">
+                <strong class="title-tag"># ABOUT with card</strong>
+                <ul class="card-list">
+                  <li>
+                    <!-- 카드이미지 -->
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                    <!-- 카드 호버시 나오는 텍스트 -->
+                    <div class="card-detail">
+                      <div class="inner">
+                        <strong>Title</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
+                          exercitationem
+                          repellat impedit soluta minima eum, facilis nam quo!</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- 카드이미지 -->
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                    <!-- 카드 호버시 나오는 텍스트 -->
+                    <div class="card-detail">
+                      <div class="inner">
+                        <strong>Title</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
+                          exercitationem
+                          repellat impedit soluta minima eum, facilis nam quo!</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- 카드이미지 -->
+                    <figure>
+                      <img src="" alt="">
+                    </figure>
+                    <!-- 카드 호버시 나오는 텍스트 -->
+                    <div class="card-detail">
+                      <div class="inner">
+                        <strong>Title</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sint perspiciatis
+                          exercitationem
+                          repellat impedit soluta minima eum, facilis nam quo!</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- Section 02 : Portfolio -->
+          <section id="section2" class="portfolio">
+            <div class="inner">
+              <div class="sec-title">
+                <span>02</span>
+                <h2>portfolio</h2>
+              </div>
+              <!-- Section 02 : Portfolio [01]project -->
+              <div class="project-allwrap">
+                <div class="project-tag-wrap">
+                  <strong class="title-tag"># Project</strong>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn-up"><i class="hidden">위</i></button>
+                    <button type="button" class="btn-down"><i class="hidden">아래</i></button>
+                  </div>
+                </div>
+                <div class="project-swiper-wrap">
+                  <div class="project-text-wrap">
+                    <div class="swiper project-text">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>01</span>
                               <strong>Samsonite OnlineMall</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>01</span>
+                                <strong>Samsonite OnlineMall</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>02</span>
-                            <strong>Melody Mangroove</strong>
-                          </div>
-                          <div class="project-info-wrap">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>02</span>
                               <strong>Melody Mangroove</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>02</span>
+                                <strong>Melody Mangroove</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>03</span>
-                            <strong>COEX Aquarium</strong>
-                          </div>
-                          <div class="project-info-wrap">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>03</span>
                               <strong>COEX Aquarium</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>03</span>
+                                <strong>COEX Aquarium</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>04</span>
-                            <strong>Portfolio Site</strong>
-                          </div>
-                          <div class="project-info-wrap">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>04</span>
                               <strong>Portfolio Site</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>04</span>
+                                <strong>Portfolio Site</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>05</span>
-                            <strong>Toy Story4 MicroSite</strong>
-                          </div>
-                          <div class="project-info-wrap">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>05</span>
                               <strong>Toy Story4 MicroSite</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>05</span>
+                                <strong>Toy Story4 MicroSite</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="inner">
-                          <div class="project-title">
-                            <span>06</span>
-                            <strong>Joe's Breath</strong>
-                          </div>
-                          <div class="project-info-wrap">
+                        <div class="swiper-slide">
+                          <div class="inner">
                             <div class="project-title">
                               <span>06</span>
                               <strong>Joe's Breath</strong>
                             </div>
-                            <div class="project-tag-list">
-                              <span class="tag">반응형</span>
-                              <span class="tag">리디자인</span>
-                              <span class="tag">1인 프로젝트</span>
-                            </div>
-                            <div class="project-info-detail">
-                              <dl>
-                                <dt>PROJECT.</dt>
-                                <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
-                              </dl>
-                              <dl>
-                                <dt>PERIOD.</dt>
-                                <dd>2024. 03. 24 - 2024. 05. 28</dd>
-                              </dl>
-                              <dl>
-                                <dt>TOOL.</dt>
-                                <dd>
-                                  <span><i class="hidden">Figma</i></span>
-                                  <span><i class="hidden">Illustrator</i></span>
-                                  <span><i class="hidden">Visual Studio Code</i></span>
-                                </dd>
-                              </dl>
+                            <div class="project-info-wrap">
+                              <div class="project-title">
+                                <span>06</span>
+                                <strong>Joe's Breath</strong>
+                              </div>
+                              <div class="project-tag-list">
+                                <span class="tag">반응형</span>
+                                <span class="tag">리디자인</span>
+                                <span class="tag">1인 프로젝트</span>
+                              </div>
+                              <div class="project-info-detail">
+                                <dl>
+                                  <dt>PROJECT.</dt>
+                                  <dd>쌤소나이트 공식 온라인몰 : 반응형 웹 디자인 및 구현</dd>
+                                </dl>
+                                <dl>
+                                  <dt>PERIOD.</dt>
+                                  <dd>2024. 03. 24 - 2024. 05. 28</dd>
+                                </dl>
+                                <dl>
+                                  <dt>TOOL.</dt>
+                                  <dd>
+                                    <span><i class="hidden">Figma</i></span>
+                                    <span><i class="hidden">Illustrator</i></span>
+                                    <span><i class="hidden">Visual Studio Code</i></span>
+                                  </dd>
+                                </dl>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div class="project-img-wrap">
+                    <div class="swiper project-img">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a href="./project-con/1-samsonite.html">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#">
+                            <figure>
+                              <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                            </figure>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="project-img-wrap">
-                  <div class="swiper project-img">
+              </div>
+              <!-- Section 02 : Portfolio [02]Graphic -->
+              <div class="graphic-allwrap">
+                <div class="graphic-tag-wrap">
+                  <strong class="title-tag"># Graphic</strong>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
+                    <button type="button" class="btn-next"><i class="hidden">다음</i></button>
+                  </div>
+                </div>
+                <div class="graphic-list-wrap">
+                  <div class="swiper graphic-slider">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="
+                          https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=2731&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="
+                          https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="
+                          https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=4096&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?q=80&w=4032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="https://images.unsplash.com/photo-1643916861364-02e63ce3e52f?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                       <div class="swiper-slide">
                         <figure>
-                          <img src="./img/project-thumb-samsonite.png" alt="Samsonite OnlineMall">
+                          <img
+                            src="https://images.unsplash.com/photo-1637611331620-51149c7ceb94?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                         </figure>
                       </div>
                     </div>
@@ -573,106 +646,45 @@
                 </div>
               </div>
             </div>
-            <!-- Section 02 : Portfolio [02]Graphic -->
-            <div class="graphic-allwrap">
-              <div class="graphic-tag-wrap">
-                <strong class="title-tag"># Graphic</strong>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-prev"><i class="hidden">이전</i></button>
-                  <button type="button" class="btn-next"><i class="hidden">다음</i></button>
-                </div>
+          </section>
+          <!-- Section 03 : contact -->
+          <section id="section3" class="contact">
+            <div class="inner">
+              <div class="sec-title">
+                <span>03</span>
+                <h2>contact</h2>
               </div>
-              <div class="graphic-list-wrap">
-                <div class="swiper graphic-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="
-                        https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=2731&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="
-                        https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="
-                        https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=4096&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?q=80&w=4032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="https://images.unsplash.com/photo-1643916861364-02e63ce3e52f?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure>
-                        <img
-                          src="https://images.unsplash.com/photo-1637611331620-51149c7ceb94?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="">
-                      </figure>
-                    </div>
+              <div class="contact-wrap">
+                <div class="contact-pic">
+                  <!-- 영상으로 할지 이미지로 할지 아직 결정하지 못함 -->
+                  <figure>
+                    <img src="" alt="">
+                  </figure>
+                </div>
+                <div class="contact-text">
+                  <div class="contact-text-wrap">
+                    <dl>
+                      <dt>Name</dt>
+                      <dd>
+                        <span>류솔아</span>
+                        <span>RYOO SOL A</span>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>E-mail</dt>
+                      <dd>mav7937@naver.com</dd>
+                    </dl>
+                    <dl>
+                      <dt>Phone</dt>
+                      <dd>010-2700-7937</dd>
+                    </dl>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <!-- Section 03 : contact -->
-        <section id="section3" class="contact">
-          <div class="inner">
-            <div class="sec-title">
-              <span>03</span>
-              <h2>contact</h2>
-            </div>
-            <div class="contact-wrap">
-              <div class="contact-pic">
-                <!-- 영상으로 할지 이미지로 할지 아직 결정하지 못함 -->
-                <figure>
-                  <img src="" alt="">
-                </figure>
-              </div>
-              <div class="contact-text">
-                <div class="contact-text-wrap">
-                  <dl>
-                    <dt>Name</dt>
-                    <dd>
-                      <span>류솔아</span>
-                      <span>RYOO SOL A</span>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <dt>E-mail</dt>
-                    <dd>mav7937@naver.com</dd>
-                  </dl>
-                  <dl>
-                    <dt>Phone</dt>
-                    <dd>010-2700-7937</dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
   </div>
 

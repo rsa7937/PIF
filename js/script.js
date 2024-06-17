@@ -1,174 +1,222 @@
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
-  $(document).ready(function () {
-    $('html').scrollTop(0);
-  });
 
-  $(window).on('load', function () {
-    $('html').scrollTop(0);
-  });
+  function mainInit() {
+    // $(document).ready(function () {
+    //   $('html').scrollTop(0);
+    // });
 
-  // LOGO Animation
+    $(window).on('load', function () {
+      $('html').scrollTop(0);
+    });
 
-  // 비디오가 다 재생된 후, 또는 비디오를 스킵한 후 플레이되는 로딩(헤더와 메인이 뜨는) 애니메이션 함수
-  function loadAni() {
-    const $logoAniWrap = $('.logo-ani-wrap');
-    const loadTL = gsap.timeline();
+    // LOGO Animation
 
-    loadTL.to($logoAniWrap, { yPercent: -200, duration: 1.2, ease: 'power4.inOut' }, '<');
-    loadTL.from('.total-wrap', { marginTop: 1000, duration: 1.2, ease: 'power4.inOut' }, '<');
+    // 비디오가 다 재생된 후, 또는 비디오를 스킵한 후 플레이되는 로딩(헤더와 메인이 뜨는) 애니메이션 함수
+    function loadAni() {
+      const $logoAniWrap = $('.logo-ani-wrap');
+      const loadTL = gsap.timeline();
 
-    setTimeout(function () {
-      $('.logo-ani-wrap').hide();
-    }, 6000);
+      loadTL.to($logoAniWrap, { yPercent: -200, duration: 1.2, ease: 'power4.inOut' }, '<');
+      loadTL.from('.total-wrap', { marginTop: 1000, duration: 1.2, ease: 'power4.inOut' }, '<');
 
-    loadTL.from(
-      '.visual-video',
-      {
-        // transformOrigin: 'right top',
-        duration: 1.2,
-        scale: 1.15,
-        // width: '100%',
-        backgroundColor: '#143021',
-        ease: 'power4.inOut',
-        // top: '50%',
+      setTimeout(function () {
+        $('.logo-ani-wrap').hide();
+      }, 6000);
+      loadTL.addLabel('back');
+      loadTL.from(
+        '.visual-video',
+        {
+          // transformOrigin: 'right top',
+          duration: 1.2,
+          scale: 1.15,
+          // width: '100%',
+          backgroundColor: '#143021',
+          ease: 'power4.inOut',
+          // top: '50%',
+        },
+        '-=0.5'
+      );
+
+      loadTL.from(
+        '.visual-con',
+        {
+          transformOrigin: 'top center',
+          duration: 1.2,
+          // scale: ,
+          // width: '1920px',
+          // backgroundColor: '#143021',
+          ease: 'power4.inOut',
+        },
+        '<'
+      );
+      loadTL.from(
+        '#section1',
+        {
+          transformOrigin: 'top center',
+          duration: 1.2,
+          marginTop: 1000,
+          ease: 'power4.inOut',
+          // width: '1920px'
+        },
+        '<'
+      );
+      // skipTL.to('#container', { paddingLeft: 384, duration: 2.5, width: '80%', ease: 'power4.inOut' });
+
+      loadTL.from(
+        '#header',
+        { xPercent: -500, duration: 1.2, ease: 'power4.inOut', onComplete: () => introIcoAni() },
+        '<'
+      );
+      loadTL.to('#container', { backgroundColor: '#fafafa', duration: 1, ease: 'power4.inOut' });
+    }
+    // 비디오가 다 재생된 후,
+    $('.logo-ani video').on('ended', loadAni);
+    introIcoAni();
+    // 비디오를 스킵한 후
+    const $btnSkip = $('.btn-skip');
+    $('.btn-skip').on('click', function () {
+      const skipTL = gsap.timeline();
+      skipTL.to($btnSkip, {
+        y: -20,
+        rotation: 10,
+        autoAlpha: 1,
+        duration: 1,
+        ease: 'elastic.out(1,0.8)',
+        onComplete: loadAni,
+      });
+      skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 1, ease: 'bounce.out' }, '-=.5');
+    });
+
+    // Header : Anchor
+    const $menu = $('.gnb > li');
+    const sectionEl = gsap.utils.toArray('section');
+    const liEl = gsap.utils.toArray('.gnb > li');
+
+    $menu.on('mouseenter', function () {
+      $(this).addClass('hover');
+    });
+
+    $menu.on('mouseleave', function () {
+      $(this).removeClass('hover');
+    });
+
+    console.log(sectionEl);
+    sectionEl.forEach((sec, index) => {
+      ScrollTrigger.create({
+        trigger: sec,
+        markers: false,
+        start: 'top 60%',
+        end: 'bottom 60%',
+        toggleClass: { targets: liEl[index], className: 'active' },
+      });
+    });
+
+    // Main : Portfolio Swiper
+    const projectText = new Swiper('.project-text', {
+      speed: 500,
+      loop: true,
+      loopedSlides: 6,
+      direction: 'vertical',
+
+      autoplay: { delay: 2000, disableOnInteraction: false },
+
+      // centeredSlides: true,
+
+      slideToClickedSlide: true,
+
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+
+      navigation: {
+        nextEl: '.btn-down',
+        prevEl: '.btn-up',
       },
-      '-=0.5'
-    );
+    });
 
-    loadTL.from(
-      '.visual-con',
-      {
-        transformOrigin: 'top center',
-        duration: 1.2,
-        // scale: ,
-        // width: '1920px',
-        // backgroundColor: '#143021',
-        ease: 'power4.inOut',
-      },
-      '<'
-    );
-    loadTL.from(
-      '#section1',
-      {
-        transformOrigin: 'top center',
-        duration: 1.2,
-        marginTop: 1000,
-        ease: 'power4.inOut',
-        // width: '1920px'
-      },
-      '<'
-    );
-    // skipTL.to('#container', { paddingLeft: 384, duration: 2.5, width: '80%', ease: 'power4.inOut' });
+    const projectImg = new Swiper('.project-img', {
+      speed: 500,
+      loop: true,
+      loopedSlides: 6,
+      direction: 'vertical',
 
-    loadTL.from(
-      '#header',
-      { xPercent: -500, duration: 1.2, ease: 'power4.inOut', onComplete: () => introIcoAni() },
-      '<'
-    );
-    loadTL.to('#container', { backgroundColor: '#fafafa', duration: 1, ease: 'power4.inOut' });
+      // autoplay: { delay: 5000 },
+
+      // centeredSlides: true,
+
+      slideToClickedSlide: true,
+
+      slidesPerView: 1,
+      spaceBetween: 20,
+      // Navigation arrows
+    });
+
+    projectImg.controller.control = projectText;
+    projectText.controller.control = projectImg;
+
+    const graphicSlider = new Swiper('.graphic-slider', {
+      speed: 500,
+      loop: true,
+      loopedSlides: 6,
+
+      autoplay: { delay: 5000 },
+
+      slideToClickedSlide: true,
+
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+      },
+    });
+
+    // Main : About [02] profile
+    const arrTL = gsap.timeline();
+    arrTL.from('.name-deco span', {
+      xPercent: -100,
+      yPercent: 100,
+      autoAlpha: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: '.profile',
+        markers: true,
+        start: 'top 100%',
+        end: 'bottom 60%',
+        toggleActions: 'play none restart none',
+        scrub: 1,
+      },
+    });
+
+    // lvBarEl.forEach(index)
+
+    const lvBarEl = gsap.utils.toArray('.info2 ul li .levelbar-wrap .levelbar');
+    console.log(lvBarEl);
+
+    lvBarEl.forEach((item, index) => {
+      const lvWidthArr = ['26rem', '24rem', '20rem', '20rem', '21rem', '22rem', '16rem', '24rem', '20rem'];
+      // lvBarEl[index].css('width', lvWidthArr[index]);
+      console.log(lvBarEl[index]);
+      $(lvBarEl[index]).css('width', `${lvWidthArr[index]}`);
+
+      gsap.from(lvBarEl[index], {
+        width: 0,
+        duration: 0.2,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.profile',
+          markers: true,
+          start: 'top 100%',
+          end: 'bottom 60%',
+          toggleActions: 'play none restart none',
+          scrub: 1,
+        },
+      });
+    });
   }
-  // 비디오가 다 재생된 후,
-  $('.logo-ani video').on('ended', loadAni);
-
-  // 비디오를 스킵한 후
-  const $btnSkip = $('.btn-skip');
-  $('.btn-skip').on('click', function () {
-    const skipTL = gsap.timeline();
-    skipTL.to($btnSkip, {
-      y: -20,
-      rotation: 10,
-      autoAlpha: 1,
-      duration: 1,
-      ease: 'elastic.out(1,0.8)',
-      onComplete: loadAni,
-    });
-    skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 1, ease: 'bounce.out' }, '-=.5');
-  });
-
-  // Header : Anchor
-  const $menu = $('.gnb > li');
-  const sectionEl = gsap.utils.toArray('section');
-  const liEl = gsap.utils.toArray('.gnb > li');
-
-  $menu.on('mouseenter', function () {
-    $(this).addClass('hover');
-  });
-
-  $menu.on('mouseleave', function () {
-    $(this).removeClass('hover');
-  });
-
-  console.log(sectionEl);
-  sectionEl.forEach((sec, index) => {
-    ScrollTrigger.create({
-      trigger: sec,
-      markers: false,
-      start: 'top 60%',
-      end: 'bottom 60%',
-      toggleClass: { targets: liEl[index], className: 'active' },
-    });
-  });
-
-  // Main : Portfolio Swiper
-  const projectText = new Swiper('.project-text', {
-    speed: 500,
-    loop: true,
-    loopedSlides: 6,
-    direction: 'vertical',
-
-    autoplay: { delay: 2000, disableOnInteraction: false },
-
-    // centeredSlides: true,
-
-    slideToClickedSlide: true,
-
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-
-    navigation: {
-      nextEl: '.btn-down',
-      prevEl: '.btn-up',
-    },
-  });
-
-  const projectImg = new Swiper('.project-img', {
-    speed: 500,
-    loop: true,
-    loopedSlides: 6,
-    direction: 'vertical',
-
-    // autoplay: { delay: 5000 },
-
-    // centeredSlides: true,
-
-    slideToClickedSlide: true,
-
-    slidesPerView: 1,
-    spaceBetween: 20,
-    // Navigation arrows
-  });
-
-  projectImg.controller.control = projectText;
-  projectText.controller.control = projectImg;
-
-  const graphicSlider = new Swiper('.graphic-slider', {
-    speed: 500,
-    loop: true,
-    loopedSlides: 6,
-
-    autoplay: { delay: 5000 },
-
-    slideToClickedSlide: true,
-
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.btn-next',
-      prevEl: '.btn-prev',
-    },
-  });
 
   // Main Visual Icon animation
   function introIcoAni() {
@@ -242,48 +290,38 @@ $(function () {
     gsap.to('.visual-con h2 b', { y: -10, duration: 0.5, repeat: -1, ease: 'power4.inOut', yoyo: true });
   }
 
-  // Main : About [02] profile
-  const arrTL = gsap.timeline();
-  arrTL.from('.name-deco span', {
-    xPercent: -100,
-    yPercent: 100,
-    autoAlpha: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power4.inOut',
-    scrollTrigger: {
-      trigger: '.profile',
-      markers: true,
-      start: 'top 100%',
-      end: 'bottom 60%',
-      toggleActions: 'play none restart none',
-      scrub: 1,
-    },
-  });
+  mainInit();
 
-  // lvBarEl.forEach(index)
+  //페이지 트랜지션
+  // Barba.js 초기화
+  // barba.init({
+  //   transitions: [
+  //     {
+  //       name: 'cover-slide-transition',
+  //       async leave(data) {
+  //         const done = this.async();
+  //         // 커버 요소 생성
+  //         const cover = $('<div class="cover"></div>');
+  //         $('body').append(cover);
 
-  const lvBarEl = gsap.utils.toArray('.info2 ul li .levelbar-wrap .levelbar');
-  console.log(lvBarEl);
+  //         // 커버 요소 애니메이션: 화면 전체를 덮으면서 오른쪽에서 왼쪽으로 이동
+  //         cover.animate({ right: '0%' }, 700, 'swing', done);
+  //       },
+  //       enter(data) {
+  //         const cover = $('.cover');
+  //         // 새로운 페이지가 보여지고 커버 요소가 왼쪽으로 나가면서 애니메이션
+  //         $(data.next.container).css({ right: '100%' });
+  //         $(data.next.container).animate({ right: '0%' }, 600, 'swing');
 
-  lvBarEl.forEach((item, index) => {
-    const lvWidthArr = ['26rem', '24rem', '20rem', '20rem', '21rem', '22rem', '16rem', '24rem', '20rem'];
-    // lvBarEl[index].css('width', lvWidthArr[index]);
-    console.log(lvBarEl[index]);
-    $(lvBarEl[index]).css('width', `${lvWidthArr[index]}`);
-
-    gsap.from(lvBarEl[index], {
-      width: 0,
-      duration: 0.2,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: '.profile',
-        markers: true,
-        start: 'top 100%',
-        end: 'bottom 60%',
-        toggleActions: 'play none restart none',
-        scrub: 1,
-      },
-    });
-  });
+  //         cover.animate({ right: '-100%' }, 500, 'swing', function () {
+  //           cover.remove(); // 애니메이션 완료 후 커버 요소 제거
+  //         });
+  //       },
+  //       afterEnter(data) {
+  //         mainInit(); // 플러그인 초기화
+  //         introIcoAni();
+  //       },
+  //     },
+  //   ],
+  // });
 });
