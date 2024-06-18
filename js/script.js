@@ -112,6 +112,8 @@ $(function () {
       });
     });
 
+    //
+
     // Main : Portfolio Swiper
     const projectText = new Swiper('.project-text', {
       speed: 500,
@@ -171,6 +173,9 @@ $(function () {
         prevEl: '.btn-prev',
       },
     });
+
+    // Main : About [01] introduce
+    ScrollTrigger.create();
 
     // Main : About [02] profile
     const arrTL = gsap.timeline();

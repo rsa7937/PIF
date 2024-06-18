@@ -34,7 +34,7 @@
         <div class="inner">
           <nav>
             <h1 class="logo">
-              <a href="../index2.html"><i class="hidden">Pine is Fine!</i></a>
+              <a href="../index.html"><i class="hidden">Pine is Fine!</i></a>
             </h1>
             <ul class="project-gnb">
               <li class="active"><a href="./1-samsonite.html"><b>쌤소나이트 공식 온라인몰</b></a></li>
@@ -66,7 +66,7 @@
       // gsap.set('.processpage figure img', { autoAlpha: 0 })
       $(window).on('load', () => {
         const projectTL = gsap.timeline();
-        projectTL.from('.processpage figure img', { autoAlpha: 0, duration: 3, ease: "power4.inOut" })
+        projectTL.from('.processpage figure img', { autoAlpha: 0, duration: 2, ease: "power4.inOut" })
         projectTL.from('.processpage figure img', { yPercent: 100, duration: 1.5, ease: "power4.inOut" }, '<')
       })
       $('.logo').on('click', () => {

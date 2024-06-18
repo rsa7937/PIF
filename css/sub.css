@@ -31,9 +31,9 @@ nav {
 }
 .project-gnb li a {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 5rem;
-  border-radius: 1rem;
+  border-radius: 4rem;
 
   align-items: center;
   padding: 1rem 3rem;
@@ -57,6 +57,7 @@ nav {
   align-items: center;
   font-weight: 600;
   position: relative;
+  /* justify-content: space-between; */
 }
 .project-gnb li a b::before {
   content: '0' counter(index-count);
@@ -72,8 +73,10 @@ nav {
   background: var(--cream);
   position: absolute;
   top: 50%;
-  right: 20%;
-  transform: translate(-50%, -50%);
+  right: 0%;
+  transform: translateY(-50%);
+  transition: 0.4s;
+  opacity: 0;
 }
 .project-gnb li.active a {
   /* padding-top: 2rem; */
@@ -84,8 +87,19 @@ nav {
   background: var(--green);
   color: var(--white);
 }
+
+.project-gnb li.active a b::after {
+  /* padding-top: 2rem; */
+  background: var(--cream);
+  opacity: 1;
+}
+
 .project-gnb li:hover a {
   border: 2px solid var(--green);
+}
+.project-gnb li:hover a b::after {
+  opacity: 1;
+  background: var(--green);
 }
 
 section {
