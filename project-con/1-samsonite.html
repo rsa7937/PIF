@@ -57,11 +57,12 @@
               <div class="info">
                 <div class="title-wrap">
                   <div class="title">
-                    <h2 data-url="../project-img/01-logo.svg"><i class="hidden">logo</i></h2>
+                    <h2 class="project01-logo"><i class="hidden">logo</i></h2>
                     <p>쌤소나이트 공식 온라인몰 <span>: 리디자인</span></p>
                     <p>1인 프로젝트</p>
                   </div>
-                  <a href="https://rsa7937.github.io/samsonite/" target='_blank' data-color="#10255A">View Website</a>
+                  <a class="project01-color" href="https://rsa7937.github.io/samsonite/" target='_blank'>View
+                    Website</a>
                 </div>
                 <div class="detail">
                   <div class="detail-title">
@@ -70,14 +71,14 @@
                   </div>
                   <div class="detail-period">
                     <strong>PERIOD.</strong>
-                    <p>2024.03.27 -</p>
+                    <p>2024. 03. 24 - 2024. 05. 28</p>
                   </div>
                   <div class="detail-tool">
                     <strong>TOOL.</strong>
                     <ul>
-                      <li><i class="hidden">Figma</i></li>
-                      <li><i class="hidden">Illustrator</i></li>
-                      <li><i class="hidden">Visual Studio Code</i></li>
+                      <li><span class="ico-figma"><i class="hidden">Figma</i></span></li>
+                      <li><span class="ico-illustrator"><i class="hidden">Illustrator</i></span></li>
+                      <li><span class="ico-vscode"><i class="hidden">Visual Studio Code</i></span></li>
                     </ul>
                   </div>
                 </div>
@@ -100,8 +101,8 @@
       // gsap.set('.processpage figure img', { autoAlpha: 0 })
       $(window).on('load', () => {
         const projectTL = gsap.timeline();
-        projectTL.from('.processpage figure img', { autoAlpha: 0, duration: 2, ease: "power4.inOut" })
-        projectTL.from('.processpage figure img', { yPercent: 100, duration: 1.5, ease: "power4.inOut" }, '<')
+        projectTL.from('.main-wrap', { autoAlpha: 0, duration: 2, ease: "power4.inOut" })
+        projectTL.from('.main-wrap', { yPercent: 100, duration: 1.5, ease: "power4.inOut" }, '<')
       })
       $('.logo').on('click', () => {
         $('.logo-ani-wrap').css('display', 'none')

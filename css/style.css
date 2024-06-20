@@ -747,7 +747,6 @@
 }
 
 /* 프로젝트 텍스트 타이틀 */
-
 .project-text .swiper-slide .project-title {
   position: relative;
 }
@@ -814,19 +813,52 @@
   gap: 2rem;
   margin-top: 5.4rem;
 }
-.project-info-wrap .project-info-detail dl {
+.project-info-wrap .project-info-detail > div {
   display: flex;
   gap: 2rem;
   color: var(--black2);
+  align-items: center;
 }
-.project-info-wrap .project-info-detail dt {
+.project-info-wrap .project-info-detail strong {
   font-size: 1.8rem;
   font-weight: 700;
 }
-.project-info-wrap .project-info-detail dd {
+.project-info-wrap .project-info-detail p {
   font-size: 1.6rem;
   font-weight: 400;
 }
+.project-info-wrap .project-info-detail ul {
+  display: flex;
+  gap: 1rem;
+}
+.project-info-wrap .project-info-detail ul li {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 0.8rem;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-info-wrap .project-info-detail ul li span {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background: transparent no-repeat 50% / contain;
+}
+.project-info-wrap .project-info-detail ul li span.ico-figma {
+  background-image: url(../img/ico-skill-figma.svg);
+}
+.project-info-wrap .project-info-detail ul li span.ico-illustrator {
+  background: transparent url(../img/ico-skill-illustrator.svg) no-repeat 50% / 90% auto;
+}
+.project-info-wrap .project-info-detail ul li span.ico-photoshop {
+  background: transparent url(../img/ico-skill-photoshop.svg) no-repeat 50% / 95% auto;
+}
+.project-info-wrap .project-info-detail ul li span.ico-vscode {
+  background: transparent url(../img/ico-skill-vscode.svg) no-repeat 50% / 110% auto;
+}
+
 .project-text .swiper-slide.swiper-slide-active {
   border: 2px solid var(--green);
   background: var(--white);

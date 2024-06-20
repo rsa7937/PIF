@@ -4,12 +4,12 @@ $(function () {
   function mainInit() {
     // 문서 새로고침했을 때, 스크롤을 최상단으로 보내기
     $(document).ready(function () {
-      $('html').scrollTop(0);
+      gsap.set($btnTop, { autoAlpha: 0 });
     });
 
-    $(window).on('load', function () {
-      $('html').scrollTop(0);
-    });
+    // $(window).on('load', function () {
+    //   $('html').scrollTop(0);
+    // });
 
     // LOGO Animation
     // 비디오가 다 재생된 후, 또는 비디오를 스킵한 후 플레이되는 로딩(헤더와 메인이 뜨는) 애니메이션 함수
@@ -72,6 +72,8 @@ $(function () {
     // 비디오가 다 재생된 후,
     $('.logo-ani video').on('ended', () => {
       loadAni();
+      $('html').css('overflowY', 'auto');
+      $('html').scrollTop(0);
     });
     // 비디오를 스킵한 후
     const $btnSkip = $('.btn-skip');
@@ -86,6 +88,8 @@ $(function () {
         onComplete: loadAni,
       });
       skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 1, ease: 'bounce.out' }, '-=.5');
+      $('html').css('overflowY', 'auto');
+      $('html').scrollTop(0);
     });
 
     // Main Visual Icon animation
@@ -249,7 +253,7 @@ $(function () {
     loopedSlides: 6,
     direction: 'vertical',
 
-    autoplay: { delay: 2000, disableOnInteraction: false },
+    autoplay: { delay: 5000, disableOnInteraction: false },
 
     // centeredSlides: true,
 
@@ -480,19 +484,19 @@ $(function () {
   // 서브페이지 인트로 브랜드 로고 넣기
   const $logoImg = $('.title h2');
   const logoImgSrc = $logoImg.data('url');
-  $logoImg.css('backgroundImage', `url(${logoImgSrc})`);
+  // $logoImg.css('backgroundImage', `url(${logoImgSrc})`);
 
   // 서브페이지 인트로 링크 버튼 색 입히기
-  const $btnLink = $('.info a');
-  const subColor = $btnLink.data('color');
-  $btnLink.css('backgroundColor', subColor);
+  // const $btnLink = $('.info a');
+  // const subColor = $btnLink.data('color');
+  // $btnLink.css('backgroundColor', subColor);
 
-  $btnLink.on('mouseenter', () => {
-    $btnLink.css('backgroundColor', '#fff');
-    $btnLink.css('color', subColor);
-  });
-  $btnLink.on('mouseleave', () => {
-    $btnLink.css('backgroundColor', subColor);
-    $btnLink.css('color', '#fff');
-  });
+  // $btnLink.on('mouseenter', () => {
+  //   $btnLink.css('backgroundColor', '#fff');
+  //   $btnLink.css('color', subColor);
+  // });
+  // $btnLink.on('mouseleave', () => {
+  //   $btnLink.css('backgroundColor', subColor);
+  //   $btnLink.css('color', '#fff');
+  // });
 });
