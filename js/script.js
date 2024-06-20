@@ -2,9 +2,9 @@ $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
   function mainInit() {
-    // $(document).ready(function () {
-    //   $('html').scrollTop(0);
-    // });
+    $(document).ready(function () {
+      $('html').scrollTop(0);
+    });
 
     $(window).on('load', function () {
       $('html').scrollTop(0);
@@ -71,8 +71,9 @@ $(function () {
       loadTL.to('#container', { backgroundColor: '#fafafa', duration: 1, ease: 'power4.inOut' });
     }
     // 비디오가 다 재생된 후,
-    $('.logo-ani video').on('ended', loadAni);
-    introIcoAni();
+    $('.logo-ani video').on('ended', () => {
+      loadAni();
+    });
     // 비디오를 스킵한 후
     const $btnSkip = $('.btn-skip');
     $('.btn-skip').on('click', function () {
@@ -173,9 +174,47 @@ $(function () {
         prevEl: '.btn-prev',
       },
     });
+    // Main : Portfolio [02] Graphic
+    // 그래픽 갤러리 모달
+    const $graphicGallery = $('.graphic-slider .swiper-slide');
+    const $dim = $('.dim');
+    const $popup = $('.popup');
+    const $btnClose = $('.btn-close');
+    const $graphicCon = $('.graphic-con');
+
+    $graphicGallery.on('click', function () {
+      $dim.fadeIn();
+      $popup.addClass('active');
+
+      // 선택한 이미지의 정보를 가져와서 변수에 담기
+      const $imgEl = $(this).find('figure img');
+
+      // 선택한 이미지의 속성별 정보를 가져와서 변수에 담기
+      const imgSrc = $imgEl.attr('src');
+      // const imgTitle = $imgEl.attr('alt');
+      // const videoSrc = $imgEl.attr('data-link');
+      // const videoSrc = $imgEl.data('link');
+      $graphicCon.html(`<img src="${imgSrc}">`);
+      // console.log($graphicCon.find('img').innerHeight(), $window.innerHeight());
+      $popup.css('width', $window.innerWidth() / 2);
+      $graphicCon.find('img').css('borderRadius', '1rem');
+      // $graphicCon.prepend(`<div class="gallery-title">${imgTitle}</div>`);
+    });
+
+    $btnClose.add($dim).on('click', function () {
+      $dim.fadeOut();
+      $popup.removeClass('active');
+
+      // 0.5초 후에 갤러리 콘텐츠를 초기화
+      setTimeout(function () {
+        $graphicCon.html('');
+      }, 500);
+
+      // $galleryContent.html(`<iframe src="">`);
+    });
 
     // Main : About [01] introduce
-    ScrollTrigger.create();
+    // ScrollTrigger.create();
 
     // Main : About [02] profile
     const arrTL = gsap.timeline();
@@ -296,6 +335,77 @@ $(function () {
   }
 
   mainInit();
+
+  // 마우스 커서, 커스텀되는 커서 관련 스크립트
+  const $window = $(window);
+  const $cursor = $('.cursor');
+
+  //마우스 좌표값
+  let x = 0;
+  let y = 0;
+  let mx = 0;
+  let my = 0;
+
+  let speed = 0.08;
+
+  $window.on('mousemove', function (e) {
+    x = e.pageX;
+    y = e.pageY;
+  });
+
+  function cursorMoving() {
+    mx += (x - mx) * speed;
+    my += (y - my) * speed;
+
+    $cursor.css({ left: mx, top: my });
+
+    requestAnimationFrame(cursorMoving);
+  }
+
+  cursorMoving();
+  // $window.on('mousemove', function (e) {
+  //   gsap.to('.cursor', {
+  //     x: e.clientX,
+  //     y: e.clientY,
+
+  //     // duration: 2,
+  //     ease: 'power4.inOut',
+  //   });
+  // });
+
+  // 비주얼영역 커스텀 커서
+  $('.visual-video')
+    .add('.visual-con')
+    .add('.ani-wrap')
+    .on('mouseenter', () => {
+      $('.cursor').addClass('visual-cursor');
+      $('.cursor').html('<span>Scroll Down</span>');
+    });
+
+  $('.visual-video')
+    .add('.visual-con')
+    .add('.ani-wrap')
+    .on('mouseleave', () => {
+      $('.cursor').removeClass('visual-cursor');
+      $('.cursor').html('');
+    });
+
+  //포트폴리오 영역 커스텀 커서
+  $('.graphic-list-wrap .swiper-slide')
+    .add('.project-img-wrap')
+    .on('mouseenter', () => {
+      $('.cursor').addClass('portfolio-cursor');
+      $('.cursor').html('<span>View More</span>');
+      $('body').add($('a')).css('cursor', 'none');
+    });
+
+  $('.graphic-list-wrap .swiper-slide')
+    .add('.project-img-wrap')
+    .on('mouseleave', () => {
+      $('.cursor').removeClass('portfolio-cursor');
+      $('.cursor').html('');
+      $('body').add($('a')).css('cursor', 'auto');
+    });
 
   //페이지 트랜지션
   // Barba.js 초기화

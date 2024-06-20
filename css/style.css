@@ -41,6 +41,9 @@
   flex-direction: column;
   justify-content: space-between;
 
+  user-select: none;
+  pointer-events: none;
+
   /* background: rgba(red, green, blue, alpha); */
 }
 .visual-con span {
@@ -53,8 +56,11 @@
   font-weight: 600;
   letter-spacing: -0.2rem;
   line-height: 0.95;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   position: relative;
+
+  user-select: none;
+  pointer-events: none;
 }
 .visual-con h2 b {
   position: absolute;
@@ -65,6 +71,10 @@
   border-radius: 50%;
   border: 2px solid var(--white);
   background: url(../img/ico-arrow-white-big.svg) no-repeat 50%;
+  z-index: 0;
+
+  user-select: none;
+  pointer-events: none;
 }
 
 .visual-con h2 strong {
@@ -79,6 +89,9 @@
   width: 5.7rem;
   height: 4.8rem;
   margin-bottom: 1rem;
+
+  user-select: none;
+  pointer-events: none;
 }
 .ani-wrap {
   position: absolute;
@@ -223,7 +236,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--green) url(../img/ico-arrow-white.svg) no-repeat 50%;
+  background: var(--green) url(../img/ico-arrow-white-small.svg) no-repeat 50%;
   transform: rotate(45deg);
 }
 
@@ -365,7 +378,7 @@
 
 .name-deco {
   position: relative;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
 .name-deco span {
   display: block;
@@ -379,15 +392,15 @@
 
 .name-deco span:nth-of-type(2) {
   transform: translate(200%, -100%);
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .name-deco span:nth-of-type(3) {
   transform: translate(100%, -200%);
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 .name-deco span:nth-of-type(4) {
   transform: translate(0, -300%);
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 .info-detail {
   width: 88.6rem;
@@ -583,7 +596,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--red) url(../img/ico-arrow-white.svg) no-repeat 50%;
+  background: var(--red) url(../img/ico-arrow-white-small.svg) no-repeat 50%;
   transform: rotate(180deg);
 }
 .card-detail p {
@@ -639,6 +652,8 @@
   color: rgba(17, 17, 17, 0.5);
   border: 2px solid var(--line);
   background: #eee;
+
+  cursor: pointer;
 
   /* transition: 0.4s; */
 }
@@ -748,7 +763,7 @@
 
 .project-img .swiper-slide {
   width: 100%;
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
@@ -781,6 +796,10 @@
   border-radius: 50%;
   border: 2px solid var(--green);
   background: var(--white1) url(../img/ico-arrow-green.svg) no-repeat 50%;
+  transition: 0.4s;
+}
+.btn-wrap button:hover {
+  background: var(--green) url(../img/ico-arrow-white.svg) no-repeat 50%;
 }
 
 .project-tag-wrap {
@@ -832,6 +851,60 @@
   overflow: hidden;
 }
 
+/* 갤러리 리스트에서 이미지 클릭시 확대된 이미지 보여주기 */
+.popup {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  border: 20px solid #fff;
+  opacity: 0;
+  transition: 0.4s;
+  background: #fff;
+  z-index: 200;
+  /* width: 100%;
+  height: 100%; */
+  max-height: 90vh;
+  max-width: 90vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.popup.active {
+  opacity: 1;
+  top: 50%;
+}
+
+.dim {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: var(--dark-green);
+  opacity: 0.8;
+  display: none;
+
+  z-index: 200;
+}
+
+.btn-close {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 200;
+}
+
 /* Section 03 : contact  */
 .contact {
   padding: 16rem 0;
@@ -852,7 +925,7 @@
 }
 
 .contact-text {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   padding: 0 5rem;
   width: 45%;
   height: 100%;
