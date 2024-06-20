@@ -321,3 +321,36 @@ section > .inner {
   cursor: none;
   /* mix-blend-mode: difference; */
 }
+
+.btn-top {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  right: 10rem;
+  bottom: 10rem;
+  position: fixed;
+  background: var(--green);
+  z-index: 200;
+  overflow: hidden;
+}
+.btn-top:hover::before {
+  margin-top: -8rem;
+}
+.btn-top::before {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  transform: rotate(180deg);
+  transition: 0.4s;
+  background: transparent url(../img/ico-arrow-white-big.svg) no-repeat 50%;
+}
+.btn-top::after {
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  transform: rotate(180deg);
+  background: transparent url(../img/ico-arrow-white-big.svg) no-repeat 50%;
+}

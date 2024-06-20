@@ -2,6 +2,7 @@ $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
   function mainInit() {
+    // 문서 새로고침했을 때, 스크롤을 최상단으로 보내기
     $(document).ready(function () {
       $('html').scrollTop(0);
     });
@@ -11,7 +12,6 @@ $(function () {
     });
 
     // LOGO Animation
-
     // 비디오가 다 재생된 후, 또는 비디오를 스킵한 후 플레이되는 로딩(헤더와 메인이 뜨는) 애니메이션 함수
     function loadAni() {
       const $logoAniWrap = $('.logo-ani-wrap');
@@ -61,7 +61,6 @@ $(function () {
         },
         '<'
       );
-      // skipTL.to('#container', { paddingLeft: 384, duration: 2.5, width: '80%', ease: 'power4.inOut' });
 
       loadTL.from(
         '#header',
@@ -89,6 +88,78 @@ $(function () {
       skipTL.to($btnSkip, { y: 300, rotation: -10, autoAlpha: 0, duration: 1, ease: 'bounce.out' }, '-=.5');
     });
 
+    // Main Visual Icon animation
+    function introIcoAni() {
+      iconAni1();
+      iconAni2();
+      iconAni3();
+      iconAni4();
+      iconAni5();
+      iconAni6();
+    }
+
+    function iconAni1() {
+      const iconTL1 = gsap.timeline({ repeat: -1, yoyo: true });
+
+      iconTL1.set('.icon-ani1 .icon-ani1-sec1', { transformOrigin: 'left center' });
+      iconTL1.set('.icon-ani1 .icon-ani1-sec2', { transformOrigin: 'left center' });
+
+      iconTL1.to('.icon-ani1 .icon-ani1-sec1', { rotate: 90, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+      iconTL1.to('.icon-ani1 .icon-ani1-sec2', { rotate: -90, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+      iconTL1.to('.icon-ani1 .icon-ani1-sec1', { xPercent: 100, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+      iconTL1.to('.icon-ani1 .icon-ani1-sec2', { xPercent: -100, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+      iconTL1.to('.icon-ani1 .icon-ani1-sec1', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+      iconTL1.to('.icon-ani1 .icon-ani1-sec2', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,0.7)' });
+    }
+
+    function iconAni2() {
+      const iconTL2 = gsap.timeline({ repeat: -1, yoyo: true });
+      iconTL2.to('.icon-ani2 span', { rotate: -90, duration: 2, ease: 'elastic.inOut(1,0.7)' });
+      iconTL2.to('.icon-ani2 span', { rotate: -180, duration: 2, ease: 'elastic.inOut(1,0.7)' });
+      iconTL2.to('.icon-ani2 span', { rotate: -270, duration: 2, ease: 'elastic.inOut(1,0.7)' });
+      iconTL2.to('.icon-ani2 span', { rotate: -360, duration: 2, ease: 'elastic.inOut(1,0.7)' });
+    }
+
+    function iconAni3() {
+      const iconTL3 = gsap.timeline({ repeat: -1, yoyo: true });
+      iconTL3.set('.icon-ani3 span', { scale: 0.8 });
+      iconTL3.to('.icon-ani3 span', { scale: 1, duration: 1, ease: 'elastic.inOut(1,0.5)' });
+      iconTL3.to('.icon-ani3 span', { rotate: 90, duration: 3, ease: 'elastic.inOut(1,0.5)' });
+      iconTL3.to('.icon-ani3 span', { scale: 0.8, duration: 1, ease: 'elastic.inOut(1,0.5)' });
+    }
+
+    function iconAni4() {
+      const iconTL4 = gsap.timeline({ repeat: -1 });
+      iconTL4.to('.icon-ani4-sec1', { xPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' });
+      iconTL4.to('.icon-ani4-sec2', { yPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+      iconTL4.to('.icon-ani4-sec4', { xPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+      iconTL4.to('.icon-ani4-sec3', { yPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+      iconTL4.to('.icon-ani4-sec1', { yPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' });
+      iconTL4.to('.icon-ani4-sec2', { xPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+      iconTL4.to('.icon-ani4-sec4', { yPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+      iconTL4.to('.icon-ani4-sec3', { xPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
+    }
+
+    function iconAni5() {
+      const iconTL5 = gsap.timeline({ repeat: -1, yoyo: true });
+
+      iconTL5.set('.icon-ani5-sec1', { transformOrigin: 'center bottom' });
+      iconTL5.set('.icon-ani5-sec2', { transformOrigin: 'center top' });
+
+      iconTL5.to('.icon-ani5-sec1', { xPercent: -50, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec2', { rotate: -90, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec1', { rotate: 90, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec2', { yPercent: -100, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec1', { yPercent: 100, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec2', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec1', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
+      iconTL5.to('.icon-ani5-sec1', { xPercent: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
+    }
+
+    function iconAni6() {
+      gsap.to('.visual-con h2 b', { y: -10, duration: 0.5, repeat: -1, ease: 'power4.inOut', yoyo: true });
+    }
+
     // Header : Anchor
     const $menu = $('.gnb > li');
     const sectionEl = gsap.utils.toArray('section');
@@ -102,6 +173,7 @@ $(function () {
       $(this).removeClass('hover');
     });
 
+    // 헤더의 메뉴 클릭시 스타일 활성화
     console.log(sectionEl);
     sectionEl.forEach((sec, index) => {
       ScrollTrigger.create({
@@ -113,108 +185,17 @@ $(function () {
       });
     });
 
-    //
-
-    // Main : Portfolio Swiper
-    const projectText = new Swiper('.project-text', {
-      speed: 500,
-      loop: true,
-      loopedSlides: 6,
-      direction: 'vertical',
-
-      autoplay: { delay: 2000, disableOnInteraction: false },
-
-      // centeredSlides: true,
-
-      slideToClickedSlide: true,
-
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-
-      navigation: {
-        nextEl: '.btn-down',
-        prevEl: '.btn-up',
+    // Main : About [01] introduction
+    ScrollTrigger.create({
+      trigger: '.introduce',
+      markers: true,
+      id: 'red points',
+      start: 'top 50%',
+      toggleClass: {
+        targets: ['.introduce-img p:first-of-type', '.introduce-img p:last-of-type'],
+        className: 'active',
       },
     });
-
-    const projectImg = new Swiper('.project-img', {
-      speed: 500,
-      loop: true,
-      loopedSlides: 6,
-      direction: 'vertical',
-
-      // autoplay: { delay: 5000 },
-
-      // centeredSlides: true,
-
-      slideToClickedSlide: true,
-
-      slidesPerView: 1,
-      spaceBetween: 20,
-      // Navigation arrows
-    });
-
-    projectImg.controller.control = projectText;
-    projectText.controller.control = projectImg;
-
-    const graphicSlider = new Swiper('.graphic-slider', {
-      speed: 500,
-      loop: true,
-      loopedSlides: 6,
-
-      autoplay: { delay: 5000 },
-
-      slideToClickedSlide: true,
-
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      // Navigation arrows
-      navigation: {
-        nextEl: '.btn-next',
-        prevEl: '.btn-prev',
-      },
-    });
-    // Main : Portfolio [02] Graphic
-    // 그래픽 갤러리 모달
-    const $graphicGallery = $('.graphic-slider .swiper-slide');
-    const $dim = $('.dim');
-    const $popup = $('.popup');
-    const $btnClose = $('.btn-close');
-    const $graphicCon = $('.graphic-con');
-
-    $graphicGallery.on('click', function () {
-      $dim.fadeIn();
-      $popup.addClass('active');
-
-      // 선택한 이미지의 정보를 가져와서 변수에 담기
-      const $imgEl = $(this).find('figure img');
-
-      // 선택한 이미지의 속성별 정보를 가져와서 변수에 담기
-      const imgSrc = $imgEl.attr('src');
-      // const imgTitle = $imgEl.attr('alt');
-      // const videoSrc = $imgEl.attr('data-link');
-      // const videoSrc = $imgEl.data('link');
-      $graphicCon.html(`<img src="${imgSrc}">`);
-      // console.log($graphicCon.find('img').innerHeight(), $window.innerHeight());
-      $popup.css('width', $window.innerWidth() / 2);
-      $graphicCon.find('img').css('borderRadius', '1rem');
-      // $graphicCon.prepend(`<div class="gallery-title">${imgTitle}</div>`);
-    });
-
-    $btnClose.add($dim).on('click', function () {
-      $dim.fadeOut();
-      $popup.removeClass('active');
-
-      // 0.5초 후에 갤러리 콘텐츠를 초기화
-      setTimeout(function () {
-        $graphicCon.html('');
-      }, 500);
-
-      // $galleryContent.html(`<iframe src="">`);
-    });
-
-    // Main : About [01] introduce
-    // ScrollTrigger.create();
 
     // Main : About [02] profile
     const arrTL = gsap.timeline();
@@ -261,80 +242,106 @@ $(function () {
       });
     });
   }
+  // Main : Portfolio [01] Project
+  const projectText = new Swiper('.project-text', {
+    speed: 500,
+    loop: true,
+    loopedSlides: 6,
+    direction: 'vertical',
 
-  // Main Visual Icon animation
-  function introIcoAni() {
-    iconAni1();
-    iconAni2();
-    iconAni3();
-    iconAni4();
-    iconAni5();
-    iconAni6();
-  }
+    autoplay: { delay: 2000, disableOnInteraction: false },
 
-  function iconAni1() {
-    const iconTL1 = gsap.timeline({ repeat: -1, yoyo: true });
+    // centeredSlides: true,
 
-    iconTL1.set('.icon-ani1 .icon-ani1-sec1', { transformOrigin: 'left center' });
-    iconTL1.set('.icon-ani1 .icon-ani1-sec2', { transformOrigin: 'left center' });
+    slideToClickedSlide: true,
 
-    iconTL1.to('.icon-ani1 .icon-ani1-sec1', { rotate: 90, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-    iconTL1.to('.icon-ani1 .icon-ani1-sec2', { rotate: -90, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-    iconTL1.to('.icon-ani1 .icon-ani1-sec1', { xPercent: 100, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-    iconTL1.to('.icon-ani1 .icon-ani1-sec2', { xPercent: -100, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-    iconTL1.to('.icon-ani1 .icon-ani1-sec1', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-    iconTL1.to('.icon-ani1 .icon-ani1-sec2', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,0.7)' });
-  }
+    slidesPerView: 'auto',
+    spaceBetween: 20,
 
-  function iconAni2() {
-    const iconTL2 = gsap.timeline({ repeat: -1, yoyo: true });
-    iconTL2.to('.icon-ani2 span', { rotate: -90, duration: 2, ease: 'elastic.inOut(1,0.7)' });
-    iconTL2.to('.icon-ani2 span', { rotate: -180, duration: 2, ease: 'elastic.inOut(1,0.7)' });
-    iconTL2.to('.icon-ani2 span', { rotate: -270, duration: 2, ease: 'elastic.inOut(1,0.7)' });
-    iconTL2.to('.icon-ani2 span', { rotate: -360, duration: 2, ease: 'elastic.inOut(1,0.7)' });
-  }
+    navigation: {
+      nextEl: '.btn-down',
+      prevEl: '.btn-up',
+    },
+  });
 
-  function iconAni3() {
-    const iconTL3 = gsap.timeline({ repeat: -1, yoyo: true });
-    iconTL3.set('.icon-ani3 span', { scale: 0.8 });
-    iconTL3.to('.icon-ani3 span', { scale: 1, duration: 1, ease: 'elastic.inOut(1,0.5)' });
-    iconTL3.to('.icon-ani3 span', { rotate: 90, duration: 3, ease: 'elastic.inOut(1,0.5)' });
-    iconTL3.to('.icon-ani3 span', { scale: 0.8, duration: 1, ease: 'elastic.inOut(1,0.5)' });
-  }
+  const projectImg = new Swiper('.project-img', {
+    speed: 500,
+    loop: true,
+    loopedSlides: 6,
+    direction: 'vertical',
 
-  function iconAni4() {
-    const iconTL4 = gsap.timeline({ repeat: -1 });
-    iconTL4.to('.icon-ani4-sec1', { xPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' });
-    iconTL4.to('.icon-ani4-sec2', { yPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-    iconTL4.to('.icon-ani4-sec4', { xPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-    iconTL4.to('.icon-ani4-sec3', { yPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-    iconTL4.to('.icon-ani4-sec1', { yPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' });
-    iconTL4.to('.icon-ani4-sec2', { xPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-    iconTL4.to('.icon-ani4-sec4', { yPercent: -100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-    iconTL4.to('.icon-ani4-sec3', { xPercent: 100, duration: 2, ease: 'elastic.inOut(1,1)' }, '<');
-  }
+    // autoplay: { delay: 5000 },
 
-  function iconAni5() {
-    const iconTL5 = gsap.timeline({ repeat: -1, yoyo: true });
+    // centeredSlides: true,
 
-    iconTL5.set('.icon-ani5-sec1', { transformOrigin: 'center bottom' });
-    iconTL5.set('.icon-ani5-sec2', { transformOrigin: 'center top' });
+    slideToClickedSlide: true,
 
-    iconTL5.to('.icon-ani5-sec1', { xPercent: -50, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec2', { rotate: -90, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec1', { rotate: 90, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec2', { yPercent: -100, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec1', { yPercent: 100, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec2', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec1', { rotate: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
-    iconTL5.to('.icon-ani5-sec1', { xPercent: 0, duration: 1, ease: 'elastic.inOut(1,1)' });
-  }
+    slidesPerView: 1,
+    spaceBetween: 20,
+    // Navigation arrows
+  });
 
-  function iconAni6() {
-    gsap.to('.visual-con h2 b', { y: -10, duration: 0.5, repeat: -1, ease: 'power4.inOut', yoyo: true });
-  }
+  projectImg.controller.control = projectText;
+  projectText.controller.control = projectImg;
 
-  mainInit();
+  // Main : Portfolio [02] Graphic
+  const graphicSlider = new Swiper('.graphic-slider', {
+    speed: 500,
+    loop: true,
+    loopedSlides: 6,
+
+    autoplay: { delay: 5000 },
+
+    slideToClickedSlide: true,
+
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.btn-next',
+      prevEl: '.btn-prev',
+    },
+  });
+  // 그래픽 갤러리 모달
+  const $graphicGallery = $('.graphic-slider .swiper-slide');
+  const $dim = $('.dim');
+  const $popup = $('.popup');
+  const $btnClose = $('.btn-close');
+  const $graphicCon = $('.graphic-con');
+
+  $graphicGallery.on('click', function () {
+    $dim.fadeIn();
+    $popup.addClass('active');
+
+    // 선택한 이미지의 정보를 가져와서 변수에 담기
+    const $imgEl = $(this).find('figure img');
+
+    // 선택한 이미지의 속성별 정보를 가져와서 변수에 담기
+    const imgSrc = $imgEl.attr('src');
+    // const imgTitle = $imgEl.attr('alt');
+    // const videoSrc = $imgEl.attr('data-link');
+    // const videoSrc = $imgEl.data('link');
+    $graphicCon.html(`<img src="${imgSrc}">`);
+    // console.log($graphicCon.find('img').innerHeight(), $window.innerHeight());
+    $popup.css('width', $window.innerWidth() / 2);
+    $graphicCon.find('img').css('borderRadius', '1rem');
+    // $graphicCon.prepend(`<div class="gallery-title">${imgTitle}</div>`);
+  });
+
+  $btnClose.add($dim).on('click', function () {
+    $dim.fadeOut();
+    $popup.removeClass('active');
+
+    // 0.5초 후에 갤러리 콘텐츠를 초기화
+    setTimeout(function () {
+      $graphicCon.html('');
+    }, 500);
+
+    // $galleryContent.html(`<iframe src="">`);
+  });
+
+  // Main : About [01] introduce
+  // ScrollTrigger.create();
 
   // 마우스 커서, 커스텀되는 커서 관련 스크립트
   const $window = $(window);
@@ -407,6 +414,33 @@ $(function () {
       $('body').add($('a')).css('cursor', 'auto');
     });
 
+  // TOP 버튼
+  const $btnTop = $('.btn-top');
+
+  $btnTop.on('click', () => {
+    $('html')
+      .stop()
+      .animate({ scrollTop: 0 }, function () {
+        gsap.to('btn-top', {
+          autoAlpha: 0,
+          duration: 0.5,
+        });
+      });
+  });
+
+  gsap.from($('.btn-top'), {
+    autoAlpha: 0,
+    duration: 0.5,
+    y: 30,
+    scrollTrigger: {
+      trigger: 'section:nth-of-type(2)',
+      start: 'top 20%',
+      markers: true,
+      id: 'btn-top',
+      toggleActions: 'play none reverse reverse',
+    },
+  });
+
   //페이지 트랜지션
   // Barba.js 초기화
   // barba.init({
@@ -439,4 +473,26 @@ $(function () {
   //     },
   //   ],
   // });
+  mainInit();
+
+  // Sub Page
+
+  // 서브페이지 인트로 브랜드 로고 넣기
+  const $logoImg = $('.title h2');
+  const logoImgSrc = $logoImg.data('url');
+  $logoImg.css('backgroundImage', `url(${logoImgSrc})`);
+
+  // 서브페이지 인트로 링크 버튼 색 입히기
+  const $btnLink = $('.info a');
+  const subColor = $btnLink.data('color');
+  $btnLink.css('backgroundColor', subColor);
+
+  $btnLink.on('mouseenter', () => {
+    $btnLink.css('backgroundColor', '#fff');
+    $btnLink.css('color', subColor);
+  });
+  $btnLink.on('mouseleave', () => {
+    $btnLink.css('backgroundColor', subColor);
+    $btnLink.css('color', '#fff');
+  });
 });
