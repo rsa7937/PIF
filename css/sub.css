@@ -115,7 +115,7 @@ nav {
   position: relative;
 }
 .project-intro .inner {
-  width: 88%;
+  width: 86%;
 }
 .info {
   /* background: rgba(255, 255, 0, 0.2); */
@@ -143,18 +143,21 @@ nav {
 }
 .title-wrap .title h2 {
   display: block;
-  width: 100%;
-  height: 6rem;
+  /* width: 100%; */
+  width: 22rem;
+  height: 4rem;
   background: transparent no-repeat 0 50%;
 }
 .title-wrap .title .project01-logo {
+  background: transparent no-repeat 0 50% / 100% auto;
   background-image: url(../project-img/01-logo.svg);
 }
 .title-wrap .title .project02-logo {
-  width: 28rem;
-  height: 18rem;
-  background: no-repeat 0 50% / cover;
+  width: 18rem;
+  height: 11.6rem;
+  background: no-repeat 0 50%;
   background-image: url(../project-img/02-logo.svg);
+  object-fit: cover;
 }
 .title-wrap .title p:first-of-type {
   display: flex;
@@ -162,7 +165,7 @@ nav {
   font-weight: 600;
   font-size: 2.8rem;
   gap: 0.8rem;
-  color: #ccc;
+  color: var(--white2);
 }
 .title-wrap .title p span {
   font-weight: 400;
@@ -172,7 +175,7 @@ nav {
 .title-wrap .title p:last-of-type {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #ccc;
+  color: var(--white2);
 }
 
 .title-wrap a {
@@ -203,7 +206,7 @@ nav {
 .title-wrap .project02-color:hover {
   background: #1d1e22;
   border: 1px solid #fdc731;
-  color: #f5f5f5;
+  color: #fdc731;
 }
 
 .detail {
