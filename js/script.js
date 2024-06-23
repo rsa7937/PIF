@@ -31,7 +31,7 @@ $(function () {
           duration: 1.2,
           scale: 1.15,
           // width: '100%',
-          backgroundColor: '#143021',
+          // backgroundColor: '#143021',
           ease: 'power4.inOut',
           // top: '50%',
         },
@@ -67,13 +67,21 @@ $(function () {
         { xPercent: -500, duration: 1.2, ease: 'power4.inOut', onComplete: () => introIcoAni() },
         '<'
       );
+
       loadTL.to('#container', { backgroundColor: '#fafafa', duration: 1, ease: 'power4.inOut' });
     }
+    // Visual 비디오 재생 함수
+    function visualVideoPlay() {
+      const $visualVideo = $('.visual-video').find('video');
+      $visualVideo.get(0).play();
+    }
+
     // 비디오가 다 재생된 후,
     $('.logo-ani video').on('ended', () => {
       loadAni();
       $('html').css('overflowY', 'auto');
       $('html').scrollTop(0);
+      ㄴㄷㅅ;
     });
     // 비디오를 스킵한 후
     const $btnSkip = $('.btn-skip');
@@ -100,6 +108,7 @@ $(function () {
       iconAni4();
       iconAni5();
       iconAni6();
+      visualVideoPlay();
     }
 
     function iconAni1() {
@@ -192,7 +201,7 @@ $(function () {
     // Main : About [01] introduction
     ScrollTrigger.create({
       trigger: '.introduce',
-      markers: true,
+      markers: false,
       id: 'red points',
       start: 'top 50%',
       toggleClass: {
@@ -212,7 +221,7 @@ $(function () {
       ease: 'power4.inOut',
       scrollTrigger: {
         trigger: '.profile',
-        markers: true,
+        markers: false,
         start: 'top 100%',
         end: 'bottom 60%',
         toggleActions: 'play none restart none',
@@ -237,7 +246,7 @@ $(function () {
         stagger: 0.2,
         scrollTrigger: {
           trigger: '.profile',
-          markers: true,
+          markers: false,
           start: 'top 100%',
           end: 'bottom 60%',
           toggleActions: 'play none restart none',
@@ -439,7 +448,7 @@ $(function () {
     scrollTrigger: {
       trigger: 'section:nth-of-type(2)',
       start: 'top 20%',
-      markers: true,
+      markers: false,
       id: 'btn-top',
       toggleActions: 'play none reverse reverse',
     },
