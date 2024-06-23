@@ -354,6 +354,7 @@ $(function () {
   });
 
   // Main : Contact
+  //Contact 명함 Lottie 애니메이션
   var params = {
     container: document.getElementById('lottie-tree'),
     renderer: 'svg',
@@ -366,6 +367,77 @@ $(function () {
   var anim;
 
   anim = lottie.loadAnimation(params);
+
+  // 스크롤
+  function contactAni() {
+    const contactTL = gsap.timeline();
+    contactTL.from('.contact-pic span:nth-of-type(1)', {
+      duration: 2,
+      scale: 0,
+      // ease: 'bounce.inOut',
+      ease: 'elastic.out(1,0.5)',
+    });
+    contactTL.from(
+      '.contact-pic span:nth-of-type(6)',
+      {
+        duration: 2,
+        scale: 0,
+        // ease: 'bounce.inOut',
+        ease: 'elastic.out(1,0.5)',
+      },
+      '-=1.8'
+    );
+    contactTL.from(
+      '.contact-pic span:nth-of-type(2)',
+      {
+        duration: 2,
+        scale: 0,
+        // ease: 'bounce.inOut',
+        ease: 'elastic.out(1,0.5)',
+      },
+      '-=1.8'
+    );
+    contactTL.from(
+      '.contact-pic span:nth-of-type(5)',
+      {
+        duration: 2,
+        scale: 0,
+        // ease: 'bounce.inOut',
+        ease: 'elastic.out(1,0.5)',
+      },
+      '-=1.8'
+    );
+    contactTL.from(
+      '.contact-pic span:nth-of-type(3)',
+      {
+        duration: 2,
+        scale: 0,
+        // ease: 'bounce.inOut',
+        ease: 'elastic.out(1,0.5)',
+      },
+      '-=1.8'
+    );
+    contactTL.from(
+      '.contact-pic span:nth-of-type(4)',
+      {
+        duration: 2,
+        scale: 0,
+        // ease: 'bounce.inOut',
+        ease: 'elastic.out(1,0.5)',
+      },
+      '-=1.8'
+    );
+  }
+
+  ScrollTrigger.create({
+    trigger: '.contact .sec-title',
+    // markers: true,
+    id: 'ornament points',
+    start: 'top 50%',
+    end: 'bottom 20%',
+    onEnter: contactAni,
+    onEnterBack: contactAni,
+  });
 
   // 마우스 커서, 커스텀되는 커서 관련 스크립트
   const $window = $(window);
@@ -501,9 +573,6 @@ $(function () {
 
   // Sub Page
 
-  // 서브페이지 인트로 브랜드 로고 넣기
-  const $logoImg = $('.title h2');
-  const logoImgSrc = $logoImg.data('url');
   // $logoImg.css('backgroundImage', `url(${logoImgSrc})`);
 
   // 서브페이지 인트로 링크 버튼 색 입히기
