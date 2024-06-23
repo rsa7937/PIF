@@ -1054,6 +1054,38 @@
   height: 100%;
   background: var(--cream);
   border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#lottie-tree {
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid #000; */
+}
+
+.contact-pic span {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.contact-pic span:nth-of-type(odd) {
+  background: var(--red);
+}
+.contact-pic span:nth-of-type(even) {
+  background: var(--yellow);
+}
+.contact-pic span:nth-of-type(1) {
+  left: 50%;
+  top: 3rem;
 }
 
 .contact-text {

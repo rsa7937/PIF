@@ -191,7 +191,7 @@ $(function () {
     sectionEl.forEach((sec, index) => {
       ScrollTrigger.create({
         trigger: sec,
-        markers: false,
+        // markers: true,
         start: 'top 60%',
         end: 'bottom 60%',
         toggleClass: { targets: liEl[index], className: 'active' },
@@ -201,7 +201,7 @@ $(function () {
     // Main : About [01] introduction
     ScrollTrigger.create({
       trigger: '.introduce',
-      markers: false,
+      // markers: true,
       id: 'red points',
       start: 'top 50%',
       toggleClass: {
@@ -221,7 +221,7 @@ $(function () {
       ease: 'power4.inOut',
       scrollTrigger: {
         trigger: '.profile',
-        markers: false,
+        // markers: true,
         start: 'top 100%',
         end: 'bottom 60%',
         toggleActions: 'play none restart none',
@@ -246,7 +246,7 @@ $(function () {
         stagger: 0.2,
         scrollTrigger: {
           trigger: '.profile',
-          markers: false,
+          // markers: true,
           start: 'top 100%',
           end: 'bottom 60%',
           toggleActions: 'play none restart none',
@@ -353,8 +353,19 @@ $(function () {
     // $galleryContent.html(`<iframe src="">`);
   });
 
-  // Main : About [01] introduce
-  // ScrollTrigger.create();
+  // Main : Contact
+  var params = {
+    container: document.getElementById('lottie-tree'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    // animationData: animationData,
+    path: './data/contact.json',
+  };
+
+  var anim;
+
+  anim = lottie.loadAnimation(params);
 
   // 마우스 커서, 커스텀되는 커서 관련 스크립트
   const $window = $(window);
@@ -448,7 +459,7 @@ $(function () {
     scrollTrigger: {
       trigger: 'section:nth-of-type(2)',
       start: 'top 20%',
-      markers: false,
+      // markers: true,
       id: 'btn-top',
       toggleActions: 'play none reverse reverse',
     },
