@@ -159,6 +159,21 @@ nav {
   background-image: url(../project-img/02-logo.svg);
   object-fit: cover;
 }
+.title-wrap .title .project03-logo {
+  width: 46rem;
+  height: 4.5rem;
+  background: no-repeat 0 50% / contain;
+  background-image: url(../project-img/03-logo.svg);
+  object-fit: cover;
+}
+.title-wrap .title .project04-logo {
+  width: 46rem;
+  height: 8rem;
+  background: no-repeat 0 50% / contain;
+  background-image: url(../project-img/04-logo.svg);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
 .title-wrap .title p:first-of-type {
   display: flex;
   align-items: center;
@@ -207,6 +222,28 @@ nav {
   background: #1d1e22;
   border: 1px solid #fdc731;
   color: #fdc731;
+}
+.title-wrap .project03-color {
+  background: #474dcc;
+  border: 1px solid #656dfc;
+  color: #fafafa;
+}
+
+.title-wrap .project03-color:hover {
+  background: #fafafa;
+  border: 1px solid #e8e6fd;
+  color: #282d8c;
+}
+.title-wrap .project04-color {
+  background: #426f3f;
+  border: 1px solid #4d9248;
+  color: #fafafa;
+}
+
+.title-wrap .project04-color:hover {
+  background: #1b2f22;
+  border: 1px solid #295c3a;
+  color: #fafafa;
 }
 
 .detail {
@@ -264,4 +301,42 @@ nav {
 section {
   width: 100%;
   height: 100%;
+}
+/* 로딩 */
+.loading {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  /* transform-origin: 100% 0; */
+}
+
+.loading-wrap span {
+  display: block;
+  width: 14rem;
+  height: 5rem;
+  background: url(../img/logo.svg) no-repeat 50%;
+}
+.loading-wrap .progress-wrap {
+  width: 16rem;
+  height: 0.8rem;
+  background: #ececec;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  position: relative;
+}
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0.8rem;
+  background: #44b653;
+  border-radius: 3rem;
 }

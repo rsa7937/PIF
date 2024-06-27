@@ -17,16 +17,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-transform/2.0.0/jquery.transform.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="../js/swiper-bundle.min.js"></script>
-  <script src="../js/aos.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@barba/core"></script>
-  <!-- <script src="./js/ani-script.js"></script> -->
-  <script src="../js/script.js"></script>
+  <script src="../js/lottie.min.js"></script>
+  <script src="../js/sub-script.js"></script>
+  <!-- <script src="../js/script.js"></script> -->
 </head>
 
 <body>
+  <div class="loading">
+    <div class="loading-wrap">
+      <span><i class="hidden">로고</i></span>
+      <div class="progress-wrap">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="total-wrap">
     <div class="wrap">
       <!-- s : header -->
@@ -40,7 +48,7 @@
               <li><a href="./1-samsonite.html"><b>쌤소나이트 공식 온라인몰</b></a></li>
               <li><a href="./2-melody-mangroove.html"><b>Melody Mangroove</b></a></li>
               <li><a href="./3-coex-aquarium.html"><b>COEX Aquarium</b></a></li>
-              <li class="active"><a href=" ./4-portfolio-site.html"><b>Portfolio Site</b></a></li>
+              <li class="active"><a href="./4-portfolio-site.html"><b>Portfolio Site</b></a></li>
               <li><a href="./5-toystory-microsite.html"><b>Toy Story4 MicroSite</b></a></li>
               <li><a href="./6-joe's-breath.html"><b>Joe's Breath</b></a></li>
             </ul>
@@ -52,30 +60,52 @@
       <!-- s : main -->
       <div class="main-wrap">
         <main id="container">
+          <section class="project-intro" style="background-image: url(../project-img/04-thumb.png);">
+            <div class="inner">
+              <div class="info">
+                <div class="title-wrap">
+                  <div class="title">
+                    <h2 class="project04-logo"><i class="hidden">logo</i></h2>
+                    <p>Pine is Fine!<span>: 포트폴리오 사이트 제작</span></p>
+                    <p>개인 프로젝트</p>
+                  </div>
+                  <a href="https://rsa7937.github.io/PIF/" target='_blank' class="project04-color">View WebSite</a>
+                </div>
+                <div class="detail">
+                  <div class="detail-title">
+                    <strong>PROJECT.</strong>
+                    <p>Pine is Fine! : 포트폴리오 사이트 제작</p>
+                  </div>
+                  <div class="detail-period">
+                    <strong>PERIOD.</strong>
+                    <p>2024. 06. 01 - 2024. 06. 28</p>
+                  </div>
+                  <div class="detail-tool detail-tool-">
+                    <strong>TOOL.</strong>
+                    <ul>
+                      <li><span class="ico-figma"><i class="hidden">Figma</i></span></li>
+                      <li><span class="ico-illustrator"><i class="hidden">Illustrator</i></span></li>
+                      <li><span class="ico-photoshop"><i class="hidden">Photoshop</i></span></li>
+                      <li><span class="ico-vscode"><i class="hidden">Visual Studio Code</i></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           <section class="processpage">
             <figure>
-              <img src="../project-img/pp-samsonite.png" alt="쌤소나이트 프로세스 페이지">
+              <img src="../project-img/02-processpage.png" alt="">
             </figure>
           </section>
         </main>
       </div>
     </div>
   </div>
-  <script>
-    $(function () {
-      // gsap.set('.processpage figure img', { autoAlpha: 0 })
-      $(window).on('load', () => {
-        const projectTL = gsap.timeline();
-        projectTL.from('.processpage figure img', { autoAlpha: 0, duration: 2, ease: "power4.inOut" })
-        projectTL.from('.processpage figure img', { yPercent: 100, duration: 1.5, ease: "power4.inOut" }, '<')
-      })
-      $('.logo').on('click', () => {
-        $('.logo-ani-wrap').css('display', 'none')
-        loadTL.seek('end');
-        window.location.href = '../index.html';
-      })
-    })
-  </script>
+
+  <button type="button" class="btn-top sub-top"><i class="hidden">TOP</i></button>
+
+
 </body>
 
 </html>

@@ -17,17 +17,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-transform/2.0.0/jquery.transform.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="../js/swiper-bundle.min.js"></script>
-  <script src="../js/aos.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@barba/core"></script>
   <script src="../js/lottie.min.js"></script>
-  <!-- <script src="./js/ani-script.js"></script> -->
-  <script src="../js/script.js"></script>
+  <script src="../js/sub-script.js"></script>
+  <!-- <script src="../js/script.js"></script> -->
 </head>
 
 <body>
+  <div class="loading">
+    <div class="loading-wrap">
+      <span><i class="hidden">로고</i></span>
+      <div class="progress-wrap">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="total-wrap">
     <div class="wrap">
       <!-- s : header -->
@@ -60,7 +67,7 @@
                   <div class="title">
                     <h2 class="project01-logo"><i class="hidden">logo</i></h2>
                     <p>쌤소나이트 공식 온라인몰 <span>: 리디자인</span></p>
-                    <p>1인 프로젝트</p>
+                    <p>개인 프로젝트</p>
                   </div>
                   <a class="project01-color" href="https://rsa7937.github.io/samsonite/" target='_blank'>View
                     Website</a>
@@ -96,22 +103,9 @@
     </div>
   </div>
 
+
   <button type="button" class="btn-top sub-top"><i class="hidden">TOP</i></button>
-  <script>
-    $(function () {
-      // gsap.set('.processpage figure img', { autoAlpha: 0 })
-      $(window).on('load', () => {
-        const projectTL = gsap.timeline();
-        projectTL.from('.main-wrap', { autoAlpha: 0, duration: 2, ease: "power4.inOut" })
-        projectTL.from('.main-wrap', { yPercent: 100, duration: 1.5, ease: "power4.inOut" }, '<')
-      })
-      $('.logo').on('click', () => {
-        $('.logo-ani-wrap').css('display', 'none')
-        loadTL.seek('end');
-        window.location.href = '../index.html';
-      })
-    })
-  </script>
+
 
 </body>
 
