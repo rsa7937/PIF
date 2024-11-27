@@ -17,13 +17,13 @@ $(function () {
       const $logoAniWrap = $('.logo-ani-wrap');
       const loadTL = gsap.timeline();
 
-      loadTL.to($logoAniWrap, { yPercent: -200, duration: 1.2, ease: 'power4.inOut' }, '<');
+      loadTL.to($logoAniWrap, { yPercent: -150, duration: 1.2, ease: 'power4.inOut' });
       loadTL.from('.total-wrap', { marginTop: 1000, duration: 1.2, ease: 'power4.inOut' }, '<');
 
       setTimeout(function () {
         $('.logo-ani-wrap').hide();
       }, 6000);
-      loadTL.addLabel('back');
+      // loadTL.addLabel('back');
       loadTL.from(
         '.visual-video',
         {
@@ -81,7 +81,6 @@ $(function () {
       loadAni();
       $('html').css('overflowY', 'auto');
       $('html').scrollTop(0);
-      ㄴㄷㅅ;
     });
     // 비디오를 스킵한 후
     const $btnSkip = $('.btn-skip');
